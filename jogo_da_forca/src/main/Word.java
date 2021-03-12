@@ -1,23 +1,35 @@
 package main;
 
+//Word class is the responsable for the words in the game
 public class Word {
 	
 	private String text; // Content of the word
 	private String tip; // Tip for guessing
 	private String type; // Type of the word
-	private int lenght; // Lenght of the world
+	private int lenght; // Lenght of the word
 	
 	// Init
-	public Word(String text, String tip, String type, int lenght) {
+	public Word(String text, String tip, String type) {
 		this.setText(text);
 		this.setTip(tip);
 		this.setType(type);
-		this.setLenght(lenght);
+		this.setLenght();
 	}
 	
 	// Init
 	public Word() {
 		
+	}
+	
+	
+	//Takes a char and compares to see if this char is in the string
+	public boolean letterCheck(char letter) {
+		for(int i = 0; i < this.lenght; i++) {
+			if(this.text.charAt(i) == letter) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	// Getters and setters
@@ -42,8 +54,8 @@ public class Word {
 	public int getLenght() {
 		return lenght;
 	}
-	public void setLenght(int lenght) {
-		this.lenght = lenght;
+	public void setLenght() {
+		this.lenght = this.text.length();
 	}
 	
 	
