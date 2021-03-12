@@ -10,9 +10,64 @@ public class Frame extends JFrame{
 	// Init
 	Frame(String title){
 		
-		Button button = new Button("A", 100, 500);
+		int spaceB = 25;
+		int spaceX = 50;
+		int spaceY = 500;
+		int spaceY2 = spaceY  + spaceB + 50;
 		
-		this.add(button);
+		Button buttonA = new Button("A", (spaceB) + (spaceX), spaceY);
+		Button buttonB = new Button("B", (spaceB * 2) + (spaceX * 2), spaceY);
+		Button buttonC = new Button("C", (spaceB * 3) + (spaceX * 3), spaceY);
+		Button buttonD = new Button("D", (spaceB * 4) + (spaceX * 4), spaceY);
+		Button buttonE = new Button("E", (spaceB * 5) + (spaceX * 5), spaceY);
+		Button buttonF = new Button("F", (spaceB * 6) + (spaceX * 6), spaceY);
+		Button buttonG = new Button("G", (spaceB * 7) + (spaceX * 7), spaceY);
+		Button buttonH = new Button("H", (spaceB * 8) + (spaceX * 8), spaceY);
+		Button buttonI = new Button("I", (spaceB * 9) + (spaceX * 9), spaceY);
+		Button buttonJ = new Button("J", (spaceB * 10) + (spaceX * 10), spaceY);
+		Button buttonK = new Button("K", (spaceB * 11) + (spaceX * 11), spaceY);
+		Button buttonL = new Button("L", (spaceB * 12) + (spaceX * 12), spaceY);
+		Button buttonM = new Button("M", (spaceB * 13) + (spaceX * 13), spaceY);
+		Button buttonN = new Button("N", (spaceB) + (spaceX), spaceY2);
+		Button buttonO = new Button("O", (spaceB * 2) + (spaceX * 2), spaceY2);
+		Button buttonP = new Button("P", (spaceB * 3) + (spaceX * 3), spaceY2);
+		Button buttonQ = new Button("Q", (spaceB * 4) + (spaceX * 4), spaceY2);
+		Button buttonR = new Button("R", (spaceB * 5) + (spaceX * 5), spaceY2);
+		Button buttonS = new Button("S", (spaceB * 6) + (spaceX * 6), spaceY2);
+		Button buttonT = new Button("T", (spaceB * 7) + (spaceX * 7), spaceY2);
+		Button buttonU = new Button("U", (spaceB * 8) + (spaceX * 8), spaceY2);
+		Button buttonV = new Button("V", (spaceB * 9) + (spaceX * 9), spaceY2);
+		Button buttonW = new Button("W", (spaceB * 10) + (spaceX * 10), spaceY2);
+		Button buttonX = new Button("X", (spaceB * 11) + (spaceX * 11), spaceY2);
+		Button buttonY = new Button("Y", (spaceB * 12) + (spaceX * 12), spaceY2);
+		Button buttonZ = new Button("Z", (spaceB * 13) + (spaceX * 13), spaceY2);
+		
+		this.add(buttonA);
+		this.add(buttonB);
+		this.add(buttonC);
+		this.add(buttonD);
+		this.add(buttonE);
+		this.add(buttonF);
+		this.add(buttonG);
+		this.add(buttonH);
+		this.add(buttonI);
+		this.add(buttonJ);
+		this.add(buttonK);
+		this.add(buttonL);
+		this.add(buttonM);
+		this.add(buttonN);
+		this.add(buttonO);
+		this.add(buttonP);
+		this.add(buttonQ);
+		this.add(buttonR);
+		this.add(buttonS);
+		this.add(buttonT);
+		this.add(buttonU);
+		this.add(buttonV);
+		this.add(buttonW);
+		this.add(buttonX);
+		this.add(buttonY);
+		this.add(buttonZ);
 		
 		this.setTitle(title); // Title
 		this.setLayout(null);
