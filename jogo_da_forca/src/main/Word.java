@@ -32,6 +32,15 @@ public class Word {
 		return false;
 	}
 	
+	public int letterCheckIndex(char letter){
+		for(int i = 0; i < this.lenght; i++) {
+			if(this.text.charAt(i) == letter) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
 	// Getters and setters
 	public String getText() {
 		return text;
