@@ -4,9 +4,11 @@ import main.Game;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Frame extends JFrame{
 	Game game;
+	Label wordShow = new Label(75, 200, 400, 400);
 
 	// Init
 	public Frame(String title, Game game){
@@ -81,6 +83,12 @@ public class Frame extends JFrame{
 		this.getContentPane().setBackground(Color.white);
 		
 		
+		this.add(wordShow);
+	}
+	
+	public void setWordShow(String text) {
+		this.wordShow.setText(text);
+		this.wordShow.setVisible(true);
 	}
 	
 }
