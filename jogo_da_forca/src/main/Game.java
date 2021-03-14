@@ -2,8 +2,8 @@ package main;
 
 public class Game {
 	
-	Player player;
-	Word word;
+	private Player player;
+	private Word word;
 	
 	// Init
 	public Game (Player player, Word word) {
@@ -19,10 +19,12 @@ public class Game {
 	
 	//When the player pick a letter
 	public void LetterChoice(char letter) {
-		if(this.word.letterCheck(letter) == true) {
-			//Shows the letter
+		if(this.word.letterCheck(letter) == true) {//If its correct
+			this.player.setScore(player.getScore() + 1);
+			System.out.println("Acertou");
 		}
 		else {
+			System.out.println("Errou");
 			this.player.setLife(this.player.getLife() - 1); //Lose 1 life point
 		}
 		
@@ -32,9 +34,19 @@ public class Game {
 		}
 		
 		// Win!
-		if(this.player.getScore() == this.word.getLenght()) {
+		if(this.player.getScore() >= this.word.getLenght()) {
 			System.out.println("You Win");
 		}
 	}
+
+	public Word getWord() {
+		return word;
+	}
+
+	public void setWord(Word word) {
+		this.word = word;
+	}
+	
+
 	
 }
