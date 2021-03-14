@@ -1,46 +1,49 @@
 package program_interface;
+import main.Game;
 
 import java.awt.Color;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class Frame extends JFrame{
+	Game game;
 
 	// Init
-	Frame(String title){
+	public Frame(String title, Game game){
+		this.game = game;//Game object in order to pass this for the buttons to use the Game functions
 		
 		int spaceB = 25;
 		int spaceX = 50;
 		int spaceY = 500;
 		int spaceY2 = spaceY  + spaceB + 50;
 		
-		Button buttonA = new Button("A", (spaceB) + (spaceX), spaceY);
-		Button buttonB = new Button("B", (spaceB * 2) + (spaceX * 2), spaceY);
-		Button buttonC = new Button("C", (spaceB * 3) + (spaceX * 3), spaceY);
-		Button buttonD = new Button("D", (spaceB * 4) + (spaceX * 4), spaceY);
-		Button buttonE = new Button("E", (spaceB * 5) + (spaceX * 5), spaceY);
-		Button buttonF = new Button("F", (spaceB * 6) + (spaceX * 6), spaceY);
-		Button buttonG = new Button("G", (spaceB * 7) + (spaceX * 7), spaceY);
-		Button buttonH = new Button("H", (spaceB * 8) + (spaceX * 8), spaceY);
-		Button buttonI = new Button("I", (spaceB * 9) + (spaceX * 9), spaceY);
-		Button buttonJ = new Button("J", (spaceB * 10) + (spaceX * 10), spaceY);
-		Button buttonK = new Button("K", (spaceB * 11) + (spaceX * 11), spaceY);
-		Button buttonL = new Button("L", (spaceB * 12) + (spaceX * 12), spaceY);
-		Button buttonM = new Button("M", (spaceB * 13) + (spaceX * 13), spaceY);
-		Button buttonN = new Button("N", (spaceB) + (spaceX), spaceY2);
-		Button buttonO = new Button("O", (spaceB * 2) + (spaceX * 2), spaceY2);
-		Button buttonP = new Button("P", (spaceB * 3) + (spaceX * 3), spaceY2);
-		Button buttonQ = new Button("Q", (spaceB * 4) + (spaceX * 4), spaceY2);
-		Button buttonR = new Button("R", (spaceB * 5) + (spaceX * 5), spaceY2);
-		Button buttonS = new Button("S", (spaceB * 6) + (spaceX * 6), spaceY2);
-		Button buttonT = new Button("T", (spaceB * 7) + (spaceX * 7), spaceY2);
-		Button buttonU = new Button("U", (spaceB * 8) + (spaceX * 8), spaceY2);
-		Button buttonV = new Button("V", (spaceB * 9) + (spaceX * 9), spaceY2);
-		Button buttonW = new Button("W", (spaceB * 10) + (spaceX * 10), spaceY2);
-		Button buttonX = new Button("X", (spaceB * 11) + (spaceX * 11), spaceY2);
-		Button buttonY = new Button("Y", (spaceB * 12) + (spaceX * 12), spaceY2);
-		Button buttonZ = new Button("Z", (spaceB * 13) + (spaceX * 13), spaceY2);
+		//Creating buttons
+		Button buttonA = new Button("A", (spaceB) + (spaceX), spaceY, game);
+		Button buttonB = new Button("B", (spaceB * 2) + (spaceX * 2), spaceY, game);
+		Button buttonC = new Button("C", (spaceB * 3) + (spaceX * 3), spaceY, game);
+		Button buttonD = new Button("D", (spaceB * 4) + (spaceX * 4), spaceY, game);
+		Button buttonE = new Button("E", (spaceB * 5) + (spaceX * 5), spaceY, game);
+		Button buttonF = new Button("F", (spaceB * 6) + (spaceX * 6), spaceY, game);
+		Button buttonG = new Button("G", (spaceB * 7) + (spaceX * 7), spaceY, game);
+		Button buttonH = new Button("H", (spaceB * 8) + (spaceX * 8), spaceY, game);
+		Button buttonI = new Button("I", (spaceB * 9) + (spaceX * 9), spaceY, game);
+		Button buttonJ = new Button("J", (spaceB * 10) + (spaceX * 10), spaceY, game);
+		Button buttonK = new Button("K", (spaceB * 11) + (spaceX * 11), spaceY, game);
+		Button buttonL = new Button("L", (spaceB * 12) + (spaceX * 12), spaceY, game);
+		Button buttonM = new Button("M", (spaceB * 13) + (spaceX * 13), spaceY, game);
+		Button buttonN = new Button("N", (spaceB) + (spaceX), spaceY2, game);
+		Button buttonO = new Button("O", (spaceB * 2) + (spaceX * 2), spaceY2, game);
+		Button buttonP = new Button("P", (spaceB * 3) + (spaceX * 3), spaceY2, game);
+		Button buttonQ = new Button("Q", (spaceB * 4) + (spaceX * 4), spaceY2, game);
+		Button buttonR = new Button("R", (spaceB * 5) + (spaceX * 5), spaceY2, game);
+		Button buttonS = new Button("S", (spaceB * 6) + (spaceX * 6), spaceY2, game);
+		Button buttonT = new Button("T", (spaceB * 7) + (spaceX * 7), spaceY2, game);
+		Button buttonU = new Button("U", (spaceB * 8) + (spaceX * 8), spaceY2, game);
+		Button buttonV = new Button("V", (spaceB * 9) + (spaceX * 9), spaceY2, game);
+		Button buttonW = new Button("W", (spaceB * 10) + (spaceX * 10), spaceY2, game);
+		Button buttonX = new Button("X", (spaceB * 11) + (spaceX * 11), spaceY2, game);
+		Button buttonY = new Button("Y", (spaceB * 12) + (spaceX * 12), spaceY2, game);
+		Button buttonZ = new Button("Z", (spaceB * 13) + (spaceX * 13), spaceY2, game);
 		
 		this.add(buttonA);
 		this.add(buttonB);
