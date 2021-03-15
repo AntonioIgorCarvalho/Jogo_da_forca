@@ -18,14 +18,19 @@ public class Game {
 		this.guessChar = this.word.getText().toCharArray();
 	}
 
-	//When round starts
+	/*
+	 * Set basic value for the player
+	 */
 	public void StartGame() {
 		this.player.setLife(4);
 		this.player.setScore(0);
 	}
 
-	//When the player pick a letter
-	public void LetterChoice(char letter) {
+	/*
+	 * letterChoice
+	 * Check if the selected letter is or not on the current guess word
+	 */
+	public void letterChoice(char letter) {
 		if(this.word.letterCheck(letter) == true) {//If its correct
 			this.player.setScore(player.getScore() + 1);
 			System.out.println("Acertou");
@@ -54,8 +59,12 @@ public class Game {
 	public void setWord(Word word) {
 		this.word = word;
 	}
-
-	public void setFrame(Frame frame) {//Set the word guess
+	
+	/*
+	 * setFrame
+	 * pass frame as parameter to Game and define the guessed word lenght to show on the screen
+	 */
+	public void setFrame(Frame frame) {
 		this.frame = frame;
 		
 		for(int i = 0; i < this.word.getLenght(); i++) {
@@ -67,6 +76,10 @@ public class Game {
 		this.frame.setWordShow(temp);
 	}
 	
+	/*
+	 * attGuessWord
+	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter
+	 */
 	public void attGuessWord(int i) {
 		guessChar[i] = guessedChar[i];
 		this.temp = String.valueOf(this.guessChar);
