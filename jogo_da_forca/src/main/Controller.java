@@ -7,7 +7,7 @@ public class Controller {
 	Frame frame;
 	
 	public Controller(Game game, Frame frame) {
-		this.game = game;
+		Controller.game = game;
 		this.frame = frame;
 	}
 
