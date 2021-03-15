@@ -1,8 +1,5 @@
 package program_interface;
 import main.Game;
-
-import java.awt.Color;
-
 import javax.swing.JButton;
 
 public class Button extends JButton {
@@ -15,7 +12,8 @@ public class Button extends JButton {
 	this.setText(title);
 	this.setVisible(true);
 	this.setFocusable(false);
-	this.addActionListener(e -> this.game.LetterChoice(title.charAt(0)));//Action when the button is clicked
-
+	this.addActionListener(e -> this.game.letterChoice(title.charAt(0)));//Action when the button is clicked
+	this.addActionListener(e -> this.setEnabled(false));//Action when the button is clicked
+	
 	}
 }
