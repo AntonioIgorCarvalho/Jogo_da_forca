@@ -21,8 +21,10 @@ public class Word {
 		
 	}
 	
-	
-	//Takes a char and compares to see if this char is in the string
+	/*
+	 * letterCheck
+	 * Takes a char and compares to see if this char is in the string
+	 */
 	public boolean letterCheck(char letter) {
 		for(int i = 0; i < this.lenght; i++) {
 			if(this.text.charAt(i) == letter) {
@@ -32,6 +34,10 @@ public class Word {
 		return false;
 	}
 	
+	/*
+	 * letterCheckIndex
+	 * Takes a letter and return the index
+	 */
 	public int letterCheckIndex(char letter){
 		for(int i = 0; i < this.lenght; i++) {
 			if(this.text.charAt(i) == letter) {

@@ -9,7 +9,7 @@ public class Main {
 
 		Player player = new Player();
 		Game game = new Game(player, brasil);
-		Frame frame = new Frame("Jogo", game);
+		Frame frame = new Frame("Jogo");
 		game.setFrame(frame);//Add frame as parameter to game
 
 		Controller controller = new Controller(game, frame);//Set the controller

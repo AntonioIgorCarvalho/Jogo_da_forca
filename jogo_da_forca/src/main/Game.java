@@ -10,7 +10,9 @@ public class Game {
 	char[] guessChar;
 	String temp;
 
-	// Init
+	/*
+	 * Init method
+	 */
 	public Game (Player player, Word word) {
 		this.player = player;
 		this.word = word;
