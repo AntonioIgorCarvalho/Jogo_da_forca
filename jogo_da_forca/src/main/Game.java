@@ -2,7 +2,14 @@ package main;
 import program_interface.Frame;
 
 public class Game {
-	
+	/*
+	 * player -> controll the number of errors and tell if the game is over or not
+	 * word -> the current secret word that the player is guessing
+	 * frame -> the graphic interface
+	 * guessedChar ->  the string of the current secret word
+	 * guessChar -> the string that the player is writting
+	 * temp -> temporary auxiliar string
+	 */
 	private Player player;
 	private Word word;
 	private Frame frame;
@@ -30,17 +37,17 @@ public class Game {
 
 	/*
 	 * letterChoice
-	 * Check if the selected letter is or not on the current guess word
+	 * Check if the selected letter is or not on the current guess word and if the game is over or not
 	 */
 	public void letterChoice(char letter) {
 		if(this.word.letterCheck(letter) == true) {//If its correct
-			this.player.setScore(player.getScore() + 1);
 			System.out.println("Acertou");
 			attGuessWord(this.word.letterCheckIndex(letter));
 		}
 		else {
 			System.out.println("Errou");
 			this.player.setLife(this.player.getLife() - 1); //Lose 1 life point
+			this.frame.setLifeShow(this.player.getLife());//Att the interface life
 		}
 		
 		// Game over
@@ -73,19 +80,33 @@ public class Game {
 			this.guessChar[i] = '?';
 		}
 		
+		//Pass the current secret word
 		this.temp = String.valueOf(this.guessChar);
-		
+
 		this.frame.setWordShow(temp);
+		this.frame.setLifeShow(4);
+		
+		
 	}
 	
 	/*
 	 * attGuessWord
-	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter
+	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
 	 */
 	public void attGuessWord(int i) {
-		guessChar[i] = guessedChar[i];
+		for(int j = 0; j < guessChar.length; j++) {
+			if(guessedChar[j] == guessedChar[i]) {
+				this.player.setScore(player.getScore() + 1);
+				guessChar[j] = guessedChar[i];
+			}
+		}
 		this.temp = String.valueOf(this.guessChar);
 		this.frame.setWordShow(temp);
 	}
+	
+	public void showTip() {
+		this.frame.tipShow(this.word.getTip());
+	}
+
 	
 }
