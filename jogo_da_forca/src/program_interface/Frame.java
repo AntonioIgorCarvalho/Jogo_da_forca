@@ -1,30 +1,35 @@
 package program_interface;
-import main.Game;
 
 import java.awt.Color;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public class Frame extends JFrame{
 
-	Label wordShow = new Label(75, 200, 400, 400);
+	Label wordShow = new Label(75, 200, 1000, 400);
+	Label lifeShow = new Label(75, 200, 1000, 200, 48);
 
 	// Init
 	public Frame(String title){
-
+		
+		//Creating buttons
+		Button2 buttonTip = new Button2("DICA", 75, 100);
+		this.add(buttonTip);
 		drawButtons();
 		
 		this.setTitle(title); // Title
-		this.setLayout(null);
+		this.setLayout(null);// Free layout
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close button shut down the program
 		this.setResizable(false);
 		this.setSize(1200,800); // Size of the window
 		this.setVisible(true);
-		this.getContentPane().setBackground(Color.white);
+		this.getContentPane().setBackground(Color.white); //Background color
 		
-		
+		//Adding labels
 		this.add(wordShow);
+		this.add(lifeShow);
+		
 	}
 	
 	private void drawButtons() {
@@ -49,6 +54,15 @@ public class Frame extends JFrame{
 	public void setWordShow(String text) {
 		this.wordShow.setText(text);
 		this.wordShow.setVisible(true);
+	}
+	
+	public void setLifeShow(int life) {
+		this.lifeShow.setText("Vidas restantes: " + life);
+		this.lifeShow.setVisible(true);
+	}
+	
+	public void tipShow(String tip) {
+		JOptionPane.showMessageDialog(this, tip);
 	}
 	
 }
