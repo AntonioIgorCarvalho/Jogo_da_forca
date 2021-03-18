@@ -13,9 +13,9 @@ public class Game {
 	private Player player;
 	private Word word;
 	private Frame frame;
-	char[] guessedChar;
-	char[] guessChar;
-	String temp;
+	private char[] guessedChar;
+	private char[] guessChar;
+	private String temp;
 
 	/*
 	 * Init method

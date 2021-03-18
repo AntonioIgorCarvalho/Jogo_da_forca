@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
 
 public class Frame extends JFrame{
 
-	Label wordShow = new Label(75, 200, 1000, 400);
-	Label lifeShow = new Label(75, 200, 1000, 200, 48);
+	private Label wordShow = new Label(75, 200, 1000, 400);
+	private Label lifeShow = new Label(75, 200, 1000, 200, 48);
 
 	// Init
 	public Frame(String title){
