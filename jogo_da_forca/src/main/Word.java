@@ -36,7 +36,7 @@ public class Word {
 	
 	/*
 	 * letterCheckIndex
-	 * Takes a letter and return the index
+	 * Takes a letter and return the index, return -1 if its not there
 	 */
 	public int letterCheckIndex(char letter){
 		for(int i = 0; i < this.lenght; i++) {

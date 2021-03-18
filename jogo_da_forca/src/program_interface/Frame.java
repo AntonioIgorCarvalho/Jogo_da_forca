@@ -32,11 +32,13 @@ public class Frame extends JFrame{
 		
 	}
 	
+	/*
+	 * Creating button letters from A to Z and adding them on the frame
+	 */
 	private void drawButtons() {
 		int spaceX = 50;
 		int spaceY = 500;	
 		
-		//Creating letter buttons from A to Z
 		int aux = 1;
 		for(int i = 65; i < 91; i++) {
 
@@ -51,6 +53,9 @@ public class Frame extends JFrame{
 		
 	}
 
+	/*
+	 * setter of the wordshow
+	 */
 	public void setWordShow(String text) {
 		this.wordShow.setText(text);
 		this.wordShow.setVisible(true);
@@ -61,6 +66,9 @@ public class Frame extends JFrame{
 		this.lifeShow.setVisible(true);
 	}
 	
+	/*
+	 * Show the current tip for the player
+	 */
 	public void tipShow(String tip) {
 		JOptionPane.showMessageDialog(this, tip);
 	}

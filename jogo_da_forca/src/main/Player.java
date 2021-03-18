@@ -2,6 +2,9 @@ package main;
 
 public class Player {
 	
+	/*
+	 * The life and score its only for one round
+	 */
 	private int life;
 	private int score;
 	

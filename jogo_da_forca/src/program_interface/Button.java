@@ -4,6 +4,9 @@ import javax.swing.JButton;
 
 public class Button extends JButton {
 
+	/*
+	 * Class created to the letter buttons from A to Z
+	 */
 	public Button(Character title, int x, int y){
 	
 	this.setBounds(x, y, 50, 50);

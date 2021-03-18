@@ -6,6 +6,9 @@ import javax.swing.JLabel;
 
 public class Label extends JLabel{
 	
+	/*
+	 * Init method without the font size
+	 */
 	public Label(int x, int y, int width, int height) {
 		
 		this.setBounds(x, y, width, height);
@@ -14,6 +17,9 @@ public class Label extends JLabel{
 		
 	}
 	
+	/*
+	 * Init method with the font size
+	 */
 	public Label(int x, int y, int width, int height, int font) {
 		
 		this.setBounds(x, y, width, height);

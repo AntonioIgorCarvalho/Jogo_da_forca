@@ -4,6 +4,9 @@ import javax.swing.JButton;
 
 import main.Controller;
 
+/*
+ * Class created for the tip button
+ */
 public class Button2 extends JButton{
 	
 	public Button2(String title, int x, int y) {
@@ -12,6 +15,7 @@ public class Button2 extends JButton{
 	this.setVisible(true);
 	this.setFocusable(false);
 	this.addActionListener(e -> Controller.game.showTip());//Action when the button is clicked
+	
 	}
 
 }
