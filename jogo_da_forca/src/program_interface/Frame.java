@@ -4,18 +4,22 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class Frame extends JFrame{
 
 	private Label wordShow = new Label(75, 200, 1000, 400);
 	private Label lifeShow = new Label(75, 200, 1000, 200, 48);
+	private JPanel game = new JPanel();  
 
 	// Init
 	public Frame(String title){
 		
+
+		
 		//Creating buttons
 		Button2 buttonTip = new Button2("DICA", 75, 100);
-		this.add(buttonTip);
+		this.game.add(buttonTip);
 		drawButtons();
 		
 		this.setTitle(title); // Title
@@ -27,8 +31,12 @@ public class Frame extends JFrame{
 		this.getContentPane().setBackground(Color.white); //Background color
 		
 		//Adding labels
-		this.add(wordShow);
-		this.add(lifeShow);
+		this.game.add(wordShow);
+		this.game.add(lifeShow);
+		
+		//Adding panel
+		this.setGamePanel();
+		this.add(game);
 		
 	}
 	
@@ -48,7 +56,7 @@ public class Frame extends JFrame{
 				spaceY += 25 + 50;
 				aux = 1;
 			}
-			this.add(button);
+			this.game.add(button);
 		}
 		
 	}
@@ -71,6 +79,17 @@ public class Frame extends JFrame{
 	 */
 	public void tipShow(String tip) {
 		JOptionPane.showMessageDialog(this, tip);
+	}
+	
+	/*
+	 * Setting the game JPanel
+	 */
+	private void setGamePanel(){
+		Color transparent = new Color(0, 0, 0, 0);
+		this.game.setBounds(0, 0, 1200, 800);
+		this.game.setVisible(true);
+		this.game.setBackground(transparent);
+		this.game.setLayout(null);
 	}
 	
 }
