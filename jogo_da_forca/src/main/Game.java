@@ -1,4 +1,6 @@
 package main;
+import javax.swing.SwingUtilities;
+
 import program_interface.Frame;
 
 public class Game {
@@ -20,8 +22,14 @@ public class Game {
 	/*
 	 * Init method
 	 */
-	public Game (Player player, Word word) {
+	public Game (Player player) {
 		this.player = player;
+	}
+	
+	/*
+	 * Setup the word valeus to the new word
+	 */
+	public void wordSetup(Word word) {
 		this.word = word;
 		this.guessedChar = this.word.getText().toCharArray();
 		this.guessChar = this.word.getText().toCharArray();
@@ -31,9 +39,33 @@ public class Game {
 	 * startGame
 	 * Set basic value for the player to start guessing the word
 	 */
-	public void startGame() {
+	public void startGame(Word word) {
+		
 		this.player.setLife(4);
 		this.player.setScore(0);
+		this.wordSetup(word);
+		
+	}
+	
+	/*
+	 * updateFrame
+	 * Updates the screen to a new word
+	 */
+	public void updateFrame(Word word) {
+		
+		this.startGame(word);//New secret word
+		this.frame.updateGamePanel();//Updating the buttons
+		
+		for(int i = 0; i < this.word.getLenght(); i++) {
+			this.guessChar[i] = '?';
+		}
+		
+		this.temp = String.valueOf(this.guessChar);	//Pass the current secret word
+
+		this.frame.setWordShow(temp);
+		this.frame.setLifeShow(4);
+		
+		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
 	}
 
 	/*
@@ -60,6 +92,8 @@ public class Game {
 		if(this.player.getScore() >= this.word.getLenght()) {
 			System.out.println("You Win");
 		}
+		
+		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
 	}
 
 	public Word getWord() {
@@ -111,6 +145,5 @@ public class Game {
 	public void showTip() {
 		this.frame.tipShow(this.word.getTip());
 	}
-
 	
 }
