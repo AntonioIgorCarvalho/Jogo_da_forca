@@ -1,25 +1,29 @@
 package main;
 import program_interface.Frame;
 
+
 public class Main {
 	/*
-	 * This main class is created only for test purpose, the two 'A' in BRAASIL is to test the function to detect the same letter in a single word
+	 * newGame
+	 * Call this function when a new game starts
 	 */
+	public static void newGame(Word word) {
+		Controller.game.startGame(word);
+	}
 
 	public static void main(String args[]) {
 
-		Word brasil = new Word("BRAASIL","De todos os países, é o único que disputou todas as copas do mundo","paises");//Word for the game
+		Word brasil = new Word("BRASIL","De todos os países, é o único que disputou todas as copas do mundo","paises");//Word for the game
+		Word brasil2 = new Word("BRAAASIL","De todos os países, é o único que disputou todas as copas do mundo","paises");//Word for the game
 
 		Player player = new Player();
-		Game game = new Game(player, brasil);
+		Game game = new Game(player);
 		Frame frame = new Frame("Jogo");
 		
-		game.setFrame(frame);//Add frame as parameter to game
-
 		new Controller(game, frame);//Set the controller
+		newGame(brasil);
+		Controller.game.setFrame(frame);//Add frame as parameter to game
 		
-		Controller.game.setWord(brasil);
-		Controller.game.startGame();
 	}
 
 }
