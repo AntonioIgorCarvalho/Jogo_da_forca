@@ -5,17 +5,15 @@ import javax.swing.JButton;
 import main.Controller;
 
 /*
- * Class created for the tip button
+ * Class created for a generic button
  */
 public class Button2 extends JButton{
 	
-	public Button2(String title, int x, int y) {
-	this.setBounds(x, y, 100, 100);
+	public Button2(String title, int x, int y, int width, int height) {
+	this.setBounds(x, y, width, height);
 	this.setText(title.toString());
 	this.setVisible(true);
 	this.setFocusable(false);
-	this.addActionListener(e -> Controller.game.showTip());//Action when the button is clicked
-	
 	}
 
 }
