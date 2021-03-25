@@ -5,22 +5,19 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
+import main.Controller;
 
 public class Frame extends JFrame{
 
 	private Label wordShow = new Label(75, 200, 1000, 400);
 	private Label lifeShow = new Label(75, 200, 1000, 200, 48);
-	private JPanel game = new JPanel();  
+	private JPanel game = new JPanel();
+	private JPanel menu = new JPanel();
 
 	// Init
 	public Frame(String title){
-		
-
-		
-		//Creating buttons
-		Button2 buttonTip = new Button2("DICA", 75, 100);
-		this.game.add(buttonTip);
-		drawButtons();
 		
 		this.setTitle(title); // Title
 		this.setLayout(null);// Free layout
@@ -30,14 +27,97 @@ public class Frame extends JFrame{
 		this.setVisible(true);
 		this.getContentPane().setBackground(Color.white); //Background color
 		
+
+		
+		//Adding panels
+		this.configureGamePanel();
+		this.configureMenuPanel();
+		
+		this.setVisibleMenu();
+	}
+	
+	/*
+	 * setVisibleGame
+	 * Choose the Game JPanel to be the one seeing
+	 */
+	public void setVisibleGame() {
+		this.game.setVisible(true);
+		this.menu.setVisible(false);
+		this.updateGamePanel();
+		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
+	}
+	
+	/*
+	 * setVisibleGame
+	 * Choose the Menu JPanel to be the one seeing
+	 */
+	public void setVisibleMenu() {
+		this.game.setVisible(false);
+		this.menu.setVisible(true);
+		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
+	}
+	
+	/*
+	 * Configuring the menu JPanel
+	 */
+	private void configureMenuPanel() {
+		Color transparent = new Color(0, 0, 0, 0);
+		this.menu.setBounds(0, 0, 1200, 800);
+		this.menu.setVisible(true);
+		this.menu.setBackground(transparent);
+		this.menu.setLayout(null);
+		
+		this.updateMenuPanel();
+	}
+	
+	/*
+	 * Draw the buttons and the enviroment to the menu
+	 */
+	public void updateMenuPanel() {
+		
+		Button2 start = new Button2("Jogar", 500, 100, 200, 200);
+		start.addActionListener(e -> this.setVisibleGame());
+		start.addActionListener(e -> Controller.game.updateFrame(Controller.game.getWord()));
+		this.menu.add(start);
+		
+		this.add(menu);
+	}
+	
+	/*
+	 * Configuring the game JPanel
+	 */
+	private void configureGamePanel(){
+		
+		Color transparent = new Color(0, 0, 0, 0);
+		this.game.setBounds(0, 0, 1200, 800);
+		this.game.setBackground(transparent);
+		this.game.setLayout(null);
+		
+		this.updateGamePanel();
+		
+	}
+	
+	/*
+	 * Draw the buttons and the enviroment to the guess word
+	 */
+	public void updateGamePanel() {
+		this.game.removeAll();
+		
+		Button2 buttonTip = new Button2("DICA", 75, 100, 100, 100);
+		buttonTip.addActionListener(e -> Controller.game.showTip());
+		this.game.add(buttonTip);
+		
+		Button2 menu = new Button2("Menu", 200, 100, 100, 100);
+		menu.addActionListener(e -> this.setVisibleMenu());
+		this.game.add(menu);
+		
+		drawButtons();
+		
 		//Adding labels
 		this.game.add(wordShow);
 		this.game.add(lifeShow);
 		
-		//Adding panel
-		this.setGamePanel();
-		this.add(game);
-		
+		this.add(game);//Adding the gameJPanel to the frame
 	}
 	
 	/*
@@ -81,15 +161,8 @@ public class Frame extends JFrame{
 		JOptionPane.showMessageDialog(this, tip);
 	}
 	
-	/*
-	 * Setting the game JPanel
-	 */
-	private void setGamePanel(){
-		Color transparent = new Color(0, 0, 0, 0);
-		this.game.setBounds(0, 0, 1200, 800);
-		this.game.setVisible(true);
-		this.game.setBackground(transparent);
-		this.game.setLayout(null);
+	public JPanel getGame() {
+		return this.game;
 	}
 	
 }
