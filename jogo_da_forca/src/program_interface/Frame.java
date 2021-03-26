@@ -15,6 +15,7 @@ public class Frame extends JFrame{
 	private Label lifeShow = new Label(75, 200, 1000, 200, 48);
 	private JPanel game = new JPanel();
 	private JPanel menu = new JPanel();
+	private JPanel score = new JPanel();
 
 	// Init
 	public Frame(String title){
@@ -31,6 +32,7 @@ public class Frame extends JFrame{
 		
 		//Adding panels
 		this.configureGamePanel();
+		this.configureScorePanel();
 		this.configureMenuPanel();
 		
 		this.setVisibleMenu();
@@ -43,6 +45,7 @@ public class Frame extends JFrame{
 	public void setVisibleGame() {
 		this.game.setVisible(true);
 		this.menu.setVisible(false);
+		this.score.setVisible(false);
 		this.updateGamePanel();
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
 	}
@@ -54,7 +57,43 @@ public class Frame extends JFrame{
 	public void setVisibleMenu() {
 		this.game.setVisible(false);
 		this.menu.setVisible(true);
+		this.score.setVisible(false);
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
+	}
+	
+	/*
+	 * setVisibleScore
+	 * Choose the Score JPanel to be the one seeing
+	 */
+	public void setVisibleScore() {
+		this.game.setVisible(false);
+		this.menu.setVisible(false);
+		this.score.setVisible(true);
+		this.updateScorePanel();
+		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
+	}
+	
+	private void configureScorePanel() {
+		Color transparent = new Color(0, 0, 0, 0);
+		this.score.setBounds(0, 0, 1200, 800);
+		this.score.setBackground(transparent);
+		this.score.setLayout(null);
+		
+	}
+	
+	public void updateScorePanel() {
+		this.score.removeAll();
+		
+		Label currentScore = new Label(75, 200, 1000, 200, 48);
+		currentScore.setText("Your current score: " + Controller.game.getScore()); 
+		currentScore.setVisible(true);
+		this.score.add(currentScore);
+		
+		Button2 menu = new Button2("Menu", 75, 100, 100, 100);
+		menu.addActionListener(e -> this.setVisibleMenu());
+		this.score.add(menu);
+		
+		this.add(score);
 	}
 	
 	/*
@@ -79,6 +118,10 @@ public class Frame extends JFrame{
 		start.addActionListener(e -> this.setVisibleGame());
 		start.addActionListener(e -> Controller.game.updateFrame(Controller.game.getWord()));
 		this.menu.add(start);
+		
+		Button2 scores = new Button2("Progresso", 500, 400, 200, 200);
+		scores.addActionListener(e -> this.setVisibleScore());
+		this.menu.add(scores);
 		
 		this.add(menu);
 	}
