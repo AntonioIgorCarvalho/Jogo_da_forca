@@ -11,6 +11,7 @@ public class Game {
 	 * guessedChar ->  the string of the current secret word
 	 * guessChar -> the string that the player is writting
 	 * temp -> temporary auxiliar string
+	 * score -> the current score of the player
 	 */
 	private Player player;
 	private Word word;
@@ -18,6 +19,7 @@ public class Game {
 	private char[] guessedChar;
 	private char[] guessChar;
 	private String temp;
+	private int score = 0;
 
 	/*
 	 * Init method
@@ -90,6 +92,7 @@ public class Game {
 		
 		// Win!
 		if(this.player.getScore() >= this.word.getLenght()) {
+			score = score += 1 ;
 			System.out.println("You Win");
 		}
 		
@@ -127,7 +130,7 @@ public class Game {
 	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
 	 */
 	public void attGuessWord(int i) {
-		
+
 		for(int j = 0; j < guessChar.length; j++) {//See if the word contains more than one unique letter, ex: BRAASIL, contais two 'A'
 			if(guessedChar[j] == guessedChar[i]) {
 				this.player.setScore(player.getScore() + 1);
@@ -144,6 +147,10 @@ public class Game {
 	 */
 	public void showTip() {
 		this.frame.tipShow(this.word.getTip());
+	}
+	
+	public int getScore() {
+		return score;
 	}
 	
 }
