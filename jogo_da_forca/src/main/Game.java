@@ -1,4 +1,6 @@
 package main;
+import java.util.ArrayList;
+
 import javax.swing.SwingUtilities;
 
 import program_interface.Frame;
@@ -16,8 +18,8 @@ public class Game {
 	private Player player;
 	private Word word;
 	private Frame frame;
-	private char[] guessedChar;
-	private char[] guessChar;
+	public ArrayList<Character> guessedChar = new ArrayList<Character>();
+	public ArrayList<Character> guessChar = new ArrayList<Character>();
 	private String temp;
 	private int score = 0;
 
@@ -31,21 +33,29 @@ public class Game {
 	/*
 	 * Setup the word valeus to the new word
 	 */
-	public void wordSetup(Word word) {
-		this.word = word;
-		this.guessedChar = this.word.getText().toCharArray();
-		this.guessChar = this.word.getText().toCharArray();
+	public void wordSetup() {
+		
+		this.guessedChar.clear();
+		this.guessChar.clear();
+		
+		for (char c : this.word.getText().toCharArray()) {
+			  this.guessedChar.add(c);
+			}
+		for (char c : this.word.getText().toCharArray()) {
+			  this.guessChar.add(c);
+			}
+		
 	}
 
 	/*
 	 * startGame
 	 * Set basic value for the player to start guessing the word
 	 */
-	public void startGame(Word word) {
+	public void startGame() {
 		
 		this.player.setLife(4);
 		this.player.setScore(0);
-		this.wordSetup(word);
+		this.wordSetup();
 		
 	}
 	
@@ -55,17 +65,18 @@ public class Game {
 	 */
 	public void updateFrame(Word word) {
 		
-		this.startGame(word);//New secret word
+		this.setWord(word);
+		
+		this.startGame();//New secret word
 		this.frame.updateGamePanel();//Updating the buttons
 		
 		for(int i = 0; i < this.word.getLenght(); i++) {
-			this.guessChar[i] = '?';
+			this.guessChar.set(i, '?');
 		}
 		
 		attGuessWord(this.word.letterCheckIndex('_'));//Checking '_' in the word
-		
-		this.temp = String.valueOf(this.guessChar);	//Pass the current secret word
 
+		this.temp = getStringRepresentation(guessChar);//Pass the current secret word
 		this.frame.setWordShow(temp);
 		this.frame.setLifeShow(4);
 		
@@ -122,15 +133,13 @@ public class Game {
 	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
 	 */
 	public void attGuessWord(int i) {
-
-		for(int j = 0; j < guessChar.length; j++) {//See if the word contains more than one unique letter, ex: BRAASIL, contais two 'A'
-			if(guessedChar[j] == guessedChar[i]) {
+		for(int j = 0; j < guessChar.size(); j++) {//See if the word contains more than one unique letter, ex: BRAASIL, contais two 'A'
+			if(guessedChar.get(j) == guessedChar.get(i)) {
 				this.player.setScore(player.getScore() + 1);
-				guessChar[j] = guessedChar[i];
+				guessChar.set(j, guessedChar.get(i));
 			}
 		}
-		
-		this.temp = String.valueOf(this.guessChar);
+	    temp = getStringRepresentation(guessChar);
 		this.frame.setWordShow(temp);
 	}
 	
@@ -143,6 +152,19 @@ public class Game {
 	
 	public int getScore() {
 		return score;
+	}
+	
+	/*
+	 * Takes an ArrayList<Character> and coverts in a normal string
+	 */
+	String getStringRepresentation(ArrayList<Character> list)
+	{    
+	    StringBuilder builder = new StringBuilder(list.size());
+	    for(Character ch: list)
+	    {
+	        builder.append(ch);
+	    }
+	    return builder.toString();
 	}
 	
 }
