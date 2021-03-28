@@ -133,6 +133,11 @@ public class Game {
 	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
 	 */
 	public void attGuessWord(int i) {
+		
+		if(i == -1) {
+			return;
+		}
+		
 		for(int j = 0; j < guessChar.size(); j++) {//See if the word contains more than one unique letter, ex: BRAASIL, contais two 'A'
 			if(guessedChar.get(j) == guessedChar.get(i)) {
 				this.player.setScore(player.getScore() + 1);
