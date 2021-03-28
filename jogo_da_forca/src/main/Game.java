@@ -62,6 +62,8 @@ public class Game {
 			this.guessChar[i] = '?';
 		}
 		
+		attGuessWord(this.word.letterCheckIndex('_'));//Checking '_' in the word
+		
 		this.temp = String.valueOf(this.guessChar);	//Pass the current secret word
 
 		this.frame.setWordShow(temp);
@@ -113,16 +115,6 @@ public class Game {
 	 */
 	public void setFrame(Frame frame) {
 		this.frame = frame;
-		
-		for(int i = 0; i < this.word.getLenght(); i++) {
-			this.guessChar[i] = '?';
-		}
-		
-		this.temp = String.valueOf(this.guessChar);	//Pass the current secret word
-
-		this.frame.setWordShow(temp);
-		this.frame.setLifeShow(4);
-		
 	}
 	
 	/*
