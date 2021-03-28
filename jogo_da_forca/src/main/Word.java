@@ -16,11 +16,6 @@ public class Word {
 		this.setLenght();
 	}
 	
-	// Init
-	public Word() {
-		
-	}
-	
 	/*
 	 * letterCheck
 	 * Takes a char and compares to see if this char is in the string
