@@ -1,6 +1,8 @@
 package program_interface;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,6 +18,7 @@ public class Frame extends JFrame{
 	private JPanel game = new JPanel();
 	private JPanel menu = new JPanel();
 	private JPanel score = new JPanel();
+	private JPanel choice = new JPanel();
 
 	// Init
 	public Frame(String title){
@@ -34,6 +37,7 @@ public class Frame extends JFrame{
 		this.configureGamePanel();
 		this.configureScorePanel();
 		this.configureMenuPanel();
+		this.configureChoicePanel();
 		
 		this.setVisibleMenu();
 	}
@@ -46,6 +50,7 @@ public class Frame extends JFrame{
 		this.game.setVisible(true);
 		this.menu.setVisible(false);
 		this.score.setVisible(false);
+		this.choice.setVisible(false);
 		this.updateGamePanel();
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
 	}
@@ -58,6 +63,7 @@ public class Frame extends JFrame{
 		this.game.setVisible(false);
 		this.menu.setVisible(true);
 		this.score.setVisible(false);
+		this.choice.setVisible(false);
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
 	}
 	
@@ -69,10 +75,26 @@ public class Frame extends JFrame{
 		this.game.setVisible(false);
 		this.menu.setVisible(false);
 		this.score.setVisible(true);
+		this.choice.setVisible(false);
 		this.updateScorePanel();
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
 	}
 	
+	/*
+	 * setVisibleScore
+	 * Choose the Score JPanel to be the one seeing
+	 */
+	public void setVisibleChoice() {
+		this.game.setVisible(false);
+		this.menu.setVisible(false);
+		this.score.setVisible(false);
+		this.choice.setVisible(true);
+		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
+	}
+	
+	/*
+	 * Configuring the Score JPanel
+	 */
 	private void configureScorePanel() {
 		Color transparent = new Color(0, 0, 0, 0);
 		this.score.setBounds(0, 0, 1200, 800);
@@ -81,6 +103,9 @@ public class Frame extends JFrame{
 		
 	}
 	
+	/*
+	 * Draw the buttons and the enviroment to the Score JPanel
+	 */
 	public void updateScorePanel() {
 		this.score.removeAll();
 		
@@ -94,6 +119,32 @@ public class Frame extends JFrame{
 		this.score.add(menu);
 		
 		this.add(score);
+	}
+	
+	/*
+	 * Configuring the choice JPanel
+	 */
+	private void configureChoicePanel() {
+		Color transparent = new Color(0, 0, 0, 0);
+		this.choice.setBounds(0, 0, 1200, 800);
+		this.choice.setVisible(true);
+		this.choice.setBackground(transparent);
+		this.choice.setLayout(null);
+		
+		this.updateChoicePanel();
+	}
+	
+	/*
+	 * Draw the buttons and the enviroment to the choice JPanel
+	 */
+	public void updateChoicePanel() {
+		Button2 music = new Button2("Musica", 500, 100, 200, 200);
+		music.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomMusic()));
+		music.addActionListener(e -> this.setVisibleGame());
+		
+		this.choice.add(music);
+		
+		this.add(choice);
 	}
 	
 	/*
@@ -115,8 +166,7 @@ public class Frame extends JFrame{
 	public void updateMenuPanel() {
 		
 		Button2 start = new Button2("Jogar", 500, 100, 200, 200);
-		start.addActionListener(e -> this.setVisibleGame());
-		start.addActionListener(e -> Controller.game.updateFrame(Controller.game.getWord()));
+		start.addActionListener(e -> this.setVisibleChoice());
 		this.menu.add(start);
 		
 		Button2 scores = new Button2("Progresso", 500, 400, 200, 200);
