@@ -138,11 +138,40 @@ public class Frame extends JFrame{
 	 * Draw the buttons and the enviroment to the choice JPanel
 	 */
 	public void updateChoicePanel() {
-		Button2 music = new Button2("Musica", 500, 100, 200, 200);
-		music.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomMusic()));
+		Button2 music = new Button2("Musica", 40, 100, 200, 200);
+		music.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.music)));
 		music.addActionListener(e -> this.setVisibleGame());
-		
 		this.choice.add(music);
+		
+		Button2 countries = new Button2("Paises", 340, 100, 200, 200);
+		countries.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.countries)));
+		countries.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(countries);
+		
+		Button2 animals = new Button2("Animais", 640, 100, 200, 200);
+		animals.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.animals)));
+		animals.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(animals);
+		
+		Button2 foods = new Button2("Comidas", 940, 100, 200, 200);
+		foods.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.foods)));
+		foods.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(foods);
+		
+		Button2 objects = new Button2("Objetos", 40, 450, 200, 200);
+		objects.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.objects)));
+		objects.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(objects);
+		
+		Button2 sports = new Button2("Esportes", 340, 450, 200, 200);
+		sports.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.sports)));
+		sports.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(sports);
+		
+		Button2 art = new Button2("Arte", 640, 450, 200, 200);
+		art.addActionListener(e -> Controller.game.updateFrame(Controller.data.randomChoice(Controller.data.art)));
+		art.addActionListener(e -> this.setVisibleGame());
+		this.choice.add(art);
 		
 		this.add(choice);
 	}
