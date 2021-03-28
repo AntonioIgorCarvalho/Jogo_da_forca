@@ -7,12 +7,13 @@ import program_interface.Frame;
 public class Controller {
 	
 	public static Game game;
+	public static Data data;
 	protected Frame frame;
 	
-	public Controller(Game game, Frame frame) {
+	public Controller(Game game, Data data, Frame frame) {
 		Controller.game = game;
+		Controller.data = data;
 		this.frame = frame;
 	}
 
 }
-
