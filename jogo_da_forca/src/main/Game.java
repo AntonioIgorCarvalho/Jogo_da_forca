@@ -68,7 +68,7 @@ public class Game {
 		this.setWord(word);
 		
 		this.startGame();//New secret word
-		this.frame.updateGamePanel();//Updating the buttons
+		this.frame.getGame().updateGamePanel();//Updating the buttons
 		
 		for(int i = 0; i < this.word.getLenght(); i++) {
 			this.guessChar.set(i, '?');
