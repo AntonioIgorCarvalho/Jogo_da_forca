@@ -33,7 +33,7 @@ public class ScorePanel extends JPanel{
 		this.add(currentScore);
 		
 		Button2 menu = new Button2("Menu", 75, 100, 100, 100);
-		menu.addActionListener(e -> this.frame.setVisibleMenu());
+		menu.addActionListener(e -> this.frame.setVisible("menu"));
 		this.add(menu);
 		
 		this.frame.add(this);
