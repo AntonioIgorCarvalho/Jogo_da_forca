@@ -19,6 +19,8 @@ public class Frame extends JFrame{
 	private MenuPanel menu = new MenuPanel(this);
 	private ScorePanel score = new ScorePanel(this);
 	private ChoicePanel choice = new ChoicePanel(this);
+	protected WritePanel write = new WritePanel(this);
+	private NewWordPanel newWord = new NewWordPanel(this);
 
 	// Init
 	public Frame(String title){
@@ -31,56 +33,40 @@ public class Frame extends JFrame{
 		this.setVisible(true);
 		this.getContentPane().setBackground(Color.white); //Background color
 		
-		this.setVisibleMenu();
+		this.setVisible("menu");
 	}
 	
 	/*
-	 * setVisibleGame
-	 * Choose the Game JPanel to be the one seeing
+	 * setVisible
+	 * Choose which JPanel to be the one visible
 	 */
-	public void setVisibleGame() {
-		this.game.setVisible(true);
+	public void setVisible(String choice) {
 		this.menu.setVisible(false);
 		this.score.setVisible(false);
+		this.newWord.setVisible(false);
 		this.choice.setVisible(false);
-		this.game.updateGamePanel();
-		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
-	}
-	
-	/*
-	 * setVisibleGame
-	 * Choose the Menu JPanel to be the one seeing
-	 */
-	public void setVisibleMenu() {
 		this.game.setVisible(false);
-		this.menu.setVisible(true);
-		this.score.setVisible(false);
-		this.choice.setVisible(false);
-		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
-	}
-	
-	/*
-	 * setVisibleScore
-	 * Choose the Score JPanel to be the one seeing
-	 */
-	public void setVisibleScore() {
-		this.game.setVisible(false);
-		this.menu.setVisible(false);
-		this.score.setVisible(true);
-		this.choice.setVisible(false);
-		this.score.updateScorePanel();
-		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
-	}
-	
-	/*
-	 * setVisibleScore
-	 * Choose the Score JPanel to be the one seeing
-	 */
-	public void setVisibleChoice() {
-		this.game.setVisible(false);
-		this.menu.setVisible(false);
-		this.score.setVisible(false);
-		this.choice.setVisible(true);
+		this.write.setVisible(false);
+		
+		if(choice == "menu") {
+			this.menu.setVisible(true);
+		} 
+		else if(choice == "score") {
+			this.score.setVisible(true);
+			this.score.updateScorePanel();
+		} 
+		else if(choice == "newWord") {
+			this.newWord.setVisible(true);
+			this.newWord.updateNewWordPanel();
+		} 
+		else if(choice == "choice") {
+			this.choice.setVisible(true);
+		} 
+		else if (choice == "game") {
+			this.game.setVisible(true);
+		} else if (choice == "write") {
+			this.write.setVisible(true);
+		}
 		SwingUtilities.updateComponentTreeUI(this);//Updating the frame
 	}
 
