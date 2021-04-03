@@ -21,12 +21,16 @@ public class MenuPanel extends JPanel{
 	public void updateMenuPanel() {
 		
 		Button2 start = new Button2("Jogar", 500, 100, 200, 200);
-		start.addActionListener(e -> this.frame.setVisibleChoice());
+		start.addActionListener(e -> this.frame.setVisible("choice"));
 		this.add(start);
 		
 		Button2 scores = new Button2("Progresso", 500, 400, 200, 200);
-		scores.addActionListener(e -> this.frame.setVisibleScore());
+		scores.addActionListener(e -> this.frame.setVisible("score"));
 		this.add(scores);
+		
+		Button2 newWord = new Button2("Nova Palavra", 900, 400, 200, 200);
+		newWord.addActionListener(e -> this.frame.setVisible("newWord"));
+		this.add(newWord);
 		
 		this.frame.add(this);
 	}
