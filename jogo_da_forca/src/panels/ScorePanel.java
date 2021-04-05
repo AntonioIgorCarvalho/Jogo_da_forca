@@ -1,10 +1,13 @@
-package program_interface;
+package panels;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
 import main.Controller;
+import program_interface.Button2;
+import program_interface.Frame;
+import program_interface.Label;
 
 public class ScorePanel extends JPanel{
 	Frame frame;
@@ -12,7 +15,7 @@ public class ScorePanel extends JPanel{
 	/*
 	 * Configuring the Score JPanel
 	 */
-	protected ScorePanel(Frame frame) {
+	public ScorePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
 		this.setBounds(0, 0, 1200, 800);

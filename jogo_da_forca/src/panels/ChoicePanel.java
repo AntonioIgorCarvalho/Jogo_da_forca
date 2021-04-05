@@ -1,4 +1,6 @@
-package program_interface;
+package panels;
+import program_interface.Frame;
+import program_interface.Button2;
 
 import java.awt.Color;
 
@@ -12,7 +14,7 @@ public class ChoicePanel extends JPanel{
 	/*
 	 * Configuring the choice JPanel
 	 */
-	protected ChoicePanel(Frame frame) {
+	public ChoicePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
 		this.setBounds(0, 0, 1200, 800);

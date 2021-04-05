@@ -1,10 +1,13 @@
-package program_interface;
+package panels;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
 import main.Controller;
+import program_interface.Button;
+import program_interface.Button2;
+import program_interface.Frame;
 
 public class GamePanel extends JPanel {
 	

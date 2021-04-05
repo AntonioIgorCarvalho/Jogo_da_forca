@@ -1,15 +1,17 @@
 package program_interface;
 
 import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import main.Controller;
+import panels.ChoicePanel;
+import panels.GamePanel;
+import panels.MenuPanel;
+import panels.NewWordPanel;
+import panels.ScorePanel;
+import panels.WritePanel;
 
 public class Frame extends JFrame{
 
@@ -19,7 +21,7 @@ public class Frame extends JFrame{
 	private MenuPanel menu = new MenuPanel(this);
 	private ScorePanel score = new ScorePanel(this);
 	private ChoicePanel choice = new ChoicePanel(this);
-	protected WritePanel write = new WritePanel(this);
+	private WritePanel write = new WritePanel(this);
 	private NewWordPanel newWord = new NewWordPanel(this);
 
 	// Init
@@ -100,6 +102,10 @@ public class Frame extends JFrame{
 	
 	public Label getLifeShow() {
 		return this.lifeShow;
+	}
+	
+	public WritePanel getWrite() {
+		return this.write;
 	}
 	
 }

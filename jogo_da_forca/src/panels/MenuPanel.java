@@ -1,13 +1,16 @@
-package program_interface;
+package panels;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
+import program_interface.Button2;
+import program_interface.Frame;
+
 public class MenuPanel extends JPanel{
 	Frame frame;
 
-	protected MenuPanel(Frame frame) {
+	public MenuPanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
 		this.setBounds(0, 0, 1200, 800);

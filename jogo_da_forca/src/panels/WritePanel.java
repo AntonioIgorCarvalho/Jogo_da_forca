@@ -1,5 +1,5 @@
-package program_interface;
-
+package panels;
+import program_interface.Button2;
 import java.awt.Color;
 
 import javax.swing.JOptionPane;
@@ -7,6 +7,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import main.Controller;
+import program_interface.Frame;
+import program_interface.Label;
 
 public class WritePanel extends JPanel {
 	private Frame frame;

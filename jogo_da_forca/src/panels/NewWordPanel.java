@@ -1,4 +1,4 @@
-package program_interface;
+package panels;
 
 import java.awt.Color;
 
@@ -8,6 +8,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import main.Controller;
+import program_interface.Button2;
+import program_interface.Frame;
+import program_interface.Label;
 
 public class NewWordPanel extends JPanel{
 	private Frame frame;
@@ -36,37 +39,37 @@ public class NewWordPanel extends JPanel{
 		
 		Button2 music = new Button2("Musica", 940, 450, 200, 200);
 		music.addActionListener(e -> this.frame.setVisible("write"));
-		music.addActionListener(e -> this.frame.write.updateWritePanel("music"));
+		music.addActionListener(e -> this.frame.getWrite().updateWritePanel("music"));
 		this.add(music);
 		
 		Button2 countries = new Button2("Paises", 340, 100, 200, 200);
 		countries.addActionListener(e -> this.frame.setVisible("write"));
-		countries.addActionListener(e -> this.frame.write.updateWritePanel("countries"));
+		countries.addActionListener(e -> this.frame.getWrite().updateWritePanel("countries"));
 		this.add(countries);
 		
 		Button2 animals = new Button2("Animais", 640, 100, 200, 200);
 		animals.addActionListener(e -> this.frame.setVisible("write"));
-		animals.addActionListener(e -> this.frame.write.updateWritePanel("animals"));
+		animals.addActionListener(e -> this.frame.getWrite().updateWritePanel("animals"));
 		this.add(animals);
 		
 		Button2 foods = new Button2("Comidas", 940, 100, 200, 200);
 		foods.addActionListener(e -> this.frame.setVisible("write"));
-		foods.addActionListener(e -> this.frame.write.updateWritePanel("foods"));
+		foods.addActionListener(e -> this.frame.getWrite().updateWritePanel("foods"));
 		this.add(foods);
 		
 		Button2 objects = new Button2("Objetos", 40, 450, 200, 200);
 		objects.addActionListener(e -> this.frame.setVisible("write"));
-		objects.addActionListener(e -> this.frame.write.updateWritePanel("objects"));
+		objects.addActionListener(e -> this.frame.getWrite().updateWritePanel("objects"));
 		this.add(objects);
 		
 		Button2 sports = new Button2("Esportes", 340, 450, 200, 200);
 		sports.addActionListener(e -> this.frame.setVisible("write"));
-		sports.addActionListener(e -> this.frame.write.updateWritePanel("sports"));
+		sports.addActionListener(e -> this.frame.getWrite().updateWritePanel("sports"));
 		this.add(sports);
 		
 		Button2 art = new Button2("Arte", 640, 450, 200, 200);
 		art.addActionListener(e -> this.frame.setVisible("write"));
-		art.addActionListener(e -> this.frame.write.updateWritePanel("art"));
+		art.addActionListener(e -> this.frame.getWrite().updateWritePanel("art"));
 		this.add(art);
 		
 		this.frame.add(this);
