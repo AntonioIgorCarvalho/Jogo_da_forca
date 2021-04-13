@@ -1,6 +1,7 @@
 package main;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import program_interface.Frame;
@@ -89,24 +90,23 @@ public class Game {
 	 */
 	public void letterChoice(char letter) {
 		if(this.word.letterCheck(letter) == true) {//If letter that the player chose is correct
-			System.out.println("Acertou");
 			attGuessWord(this.word.letterCheckIndex(letter));
 		}
 		else {
-			System.out.println("Errou");
 			this.player.setLife(this.player.getLife() - 1); //Lose 1 life point
 			this.frame.setLifeShow(this.player.getLife());//Att the interface life
 		}
 		
 		// Game over
 		if(this.player.getLife() <= -1) {
-			System.out.println("Game over");
+			this.frame.loseShow();
 		}
 		
 		// Win!
 		if(this.player.getScore() >= this.word.getLenght()) {
-			score = score += 1 ;
-			System.out.println("You Win");
+			score = score += 1;
+			this.frame.winShow();
+			Controller.data.deleteWhenWin();
 		}
 		
 		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
@@ -170,6 +170,75 @@ public class Game {
 	        builder.append(ch);
 	    }
 	    return builder.toString();
+	}
+	
+	/*
+	 * Check if the current session is out of words
+	 */
+	public void checkCurrentArray(String type) {
+		if(type == "music") {
+			if(Controller.data.music.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();
+				return;
+			}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.music));
+			return;
+		}
+		if(type == "countries") {
+			if(Controller.data.countries.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();
+				return;
+			}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.countries));
+			return;
+		}
+		if(type == "animals") {
+			if(Controller.data.animals.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();		
+				return;
+				}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.animals));
+			return;
+		}
+		if(type == "foods") {
+			if(Controller.data.foods.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();		
+				return;
+				}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.foods));
+			return;
+		}
+		if(type == "objects") {
+			if(Controller.data.objects.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();	
+				return;
+				}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.objects));
+			return;
+		}
+		if(type == "sports") {
+			if(Controller.data.sports.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();	
+				return;
+				}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.sports));
+			return;
+		}
+		if(type == "art") {
+			if(Controller.data.art.size() == 0) {
+				this.frame.setVisible("menu");
+				this.frame.completeShow();	
+				return;
+				}
+			this.updateFrame(Controller.data.randomChoice(Controller.data.art));
+			return;
+		}
 	}
 	
 }
