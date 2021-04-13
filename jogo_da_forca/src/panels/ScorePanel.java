@@ -31,7 +31,7 @@ public class ScorePanel extends JPanel{
 		this.removeAll();
 		
 		Label currentScore = new Label(75, 200, 1000, 200, 48);
-		currentScore.setText("Your current score: " + Controller.game.getScore()); 
+		currentScore.setText("Sua pontuacao atual: " + Controller.game.getScore()); 
 		currentScore.setVisible(true);
 		this.add(currentScore);
 		
