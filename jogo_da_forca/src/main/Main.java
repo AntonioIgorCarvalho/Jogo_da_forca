@@ -1,7 +1,5 @@
 package main;
 import program_interface.Frame;
-import java.util.ArrayList;
-
 
 public class Main {
 	
