@@ -12,28 +12,31 @@ public class Data {
 	public ArrayList<Word> sports = new ArrayList<Word>();
 	public ArrayList<Word> art = new ArrayList<Word>();
 	
+	public int currentIndex;
+	public Word currentWord;
+	
 	public Data() {
 		
-		Word ozzy_osbourne = new Word("OZZY_OSBOURNE","Ja mordeu um morcego","musicas");
-		Word kurt_cobain = new Word("KURT_COBAIN","Uma das capas de seus albums é a foto de seu filho submerso","musicas");
-		Word megadeth = new Word("MEGADETH","O fundador da banda foi expulso de outra ants de fundar sua propria","musicas");
+		Word ozzy_osbourne = new Word("OZZY_OSBOURNE","Ja mordeu um morcego","music");
+		Word kurt_cobain = new Word("KURT_COBAIN","Uma das capas de seus albums é a foto de seu filho submerso","music");
+		Word megadeth = new Word("MEGADETH","O fundador da banda foi expulso de outra ants de fundar sua propria","music");
 		this.music.add(ozzy_osbourne);
 		this.music.add(kurt_cobain);
 		this.music.add(megadeth);
 		
-		Word brasil = new Word("BRASIL","De todos os países, é o único que disputou todas as copas do mundo","paises");
+		Word brasil = new Word("BRASIL","De todos os países, é o único que disputou todas as copas do mundo","countries");
 		this.countries.add(brasil);
 		
-		Word cachorro = new Word("CACHORRO","É um dos melhores amigos do ser humano","animais");
+		Word cachorro = new Word("CACHORRO","É um dos melhores amigos do ser humano","animals");
 		this.animals.add(cachorro);
 		
-		Word batata = new Word("BATATA","É uma grande fonte de carboidratos","comidas");
+		Word batata = new Word("BATATA","É uma grande fonte de carboidratos","foods");
 		this.foods.add(batata);
 		
-		Word abajur = new Word("ABAJUR","É um bom utensilio para ler","objetos");
+		Word abajur = new Word("ABAJUR","É um bom utensilio para ler","objects");
 		this.objects.add(abajur);
 		
-		Word golf = new Word("GOLF","Tiger Woods aprova","esportes");
+		Word golf = new Word("GOLF","Tiger Woods aprova","sports");
 		this.sports.add(golf);
 		
 		Word mona_lisa = new Word("MONA_LISA","Mais famosa impossivel","art");
@@ -46,7 +49,44 @@ public class Data {
 	 */
 	public Word randomChoice(ArrayList<Word> target) {
 		int aux = (int) (Math.random() * target.size());
+		this.currentIndex = aux;
+		this.currentWord = target.get(aux);
 		return target.get(aux);
+	}
+	
+	/*
+	 * deleteWhenWin
+	 * Deletes the word that the player guessed
+	 */
+	public void deleteWhenWin() {
+		if(this.currentWord.getType() == "music") {
+			this.music.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "countries") {
+			this.countries.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "animals") {
+			this.animals.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "foods") {
+			this.foods.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "objects") {
+			this.objects.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "sports") {
+			this.sports.remove(this.currentIndex);
+			return;
+		}
+		if(this.currentWord.getType() == "art") {
+			this.art.remove(this.currentIndex);
+			return;
+		}
 	}
 	
 	/*
