@@ -92,6 +92,21 @@ public class Frame extends JFrame{
 		JOptionPane.showMessageDialog(this, tip);
 	}
 	
+	public void completeShow() {
+		JOptionPane.showMessageDialog(this, "Voce ja completou todas as palavras dessa sessao, escolha outra ou adicione mais palavras");
+	}
+	
+	public void winShow() {
+		this.setVisible("menu");
+		JOptionPane.showMessageDialog(this, "Parabens, voce acertou a palavra! Sua pontuacao recebeu +1!");
+	}
+	
+	public void loseShow() {
+		this.setVisible("menu");
+		JOptionPane.showMessageDialog(this, "Voce perdeu :(");
+	}
+	
+	
 	public GamePanel getGame() {
 		return this.game;
 	}
