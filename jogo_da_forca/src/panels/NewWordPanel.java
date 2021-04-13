@@ -3,11 +3,7 @@ package panels;
 import java.awt.Color;
 
 import javax.swing.JPanel;
-import javax.swing.JPopupMenu;
-import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 
-import main.Controller;
 import program_interface.Button2;
 import program_interface.Frame;
 import program_interface.Label;
@@ -33,11 +29,11 @@ public class NewWordPanel extends JPanel{
 		instruction.setText("Selecione a categoria da palavra a ser adicionada");
 		this.add(instruction);
 		
-		Button2 menu = new Button2("Menu", 40, 100, 200, 200);
+		Button2 menu = new Button2("Menu", 940, 450, 200, 200);
 		menu.addActionListener(e -> this.frame.setVisible("menu"));
 		this.add(menu);
 		
-		Button2 music = new Button2("Musica", 940, 450, 200, 200);
+		Button2 music = new Button2("Musica", 40, 100, 200, 200);
 		music.addActionListener(e -> this.frame.setVisible("write"));
 		music.addActionListener(e -> this.frame.getWrite().updateWritePanel("music"));
 		this.add(music);
