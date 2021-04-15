@@ -1,11 +1,11 @@
 package panels;
 import program_interface.Frame;
-import program_interface.Button2;
 
 import java.awt.Color;
 
 import javax.swing.JPanel;
 
+import buttons.Button2;
 import main.Controller;
 
 public class ChoicePanel extends JPanel{

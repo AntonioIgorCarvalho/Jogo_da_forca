@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-import program_interface.Button2;
+import buttons.Button2;
 import program_interface.Frame;
 import program_interface.Label;
 

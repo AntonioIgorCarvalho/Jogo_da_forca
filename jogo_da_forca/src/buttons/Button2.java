@@ -1,4 +1,4 @@
-package program_interface;
+package buttons;
 
 import javax.swing.JButton;
 
