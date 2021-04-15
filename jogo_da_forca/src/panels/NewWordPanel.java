@@ -5,8 +5,8 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import buttons.Button2;
+import labels.Label;
 import program_interface.Frame;
-import program_interface.Label;
 
 public class NewWordPanel extends JPanel{
 	private Frame frame;

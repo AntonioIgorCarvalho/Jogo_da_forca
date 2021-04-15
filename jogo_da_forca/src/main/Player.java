@@ -14,16 +14,16 @@ public class Player {
 	}
 	
 	// Getters and setters
-	public int getLife() {
+	protected int getLife() {
 		return life;
 	}
-	public void setLife(int life) {
+	protected void setLife(int life) {
 		this.life = life;
 	}
-	public int getScore() {
+	protected int getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	protected void setScore(int score) {
 		this.score = score;
 	}
 

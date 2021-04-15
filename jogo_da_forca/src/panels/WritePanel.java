@@ -6,9 +6,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import buttons.Button2;
+import labels.Label;
 import main.Controller;
 import program_interface.Frame;
-import program_interface.Label;
 
 public class WritePanel extends JPanel {
 	private Frame frame;

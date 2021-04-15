@@ -1,4 +1,4 @@
-package program_interface;
+package labels;
 
 import java.awt.Font;
 

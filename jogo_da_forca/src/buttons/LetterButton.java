@@ -2,12 +2,12 @@ package buttons;
 import main.Controller;
 import javax.swing.JButton;
 
-public class Button extends JButton {
+public class LetterButton extends JButton {
 
 	/*
 	 * Class created to the letter buttons from A to Z
 	 */
-	public Button(Character title, int x, int y){
+	public LetterButton(Character title, int x, int y){
 	
 	this.setBounds(x, y, 50, 50);
 	this.setText(title.toString());

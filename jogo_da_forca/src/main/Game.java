@@ -19,23 +19,22 @@ public class Game {
 	private Player player;
 	private Word word;
 	private Frame frame;
-	public ArrayList<Character> guessedChar = new ArrayList<Character>();
-	public ArrayList<Character> guessChar = new ArrayList<Character>();
+	private ArrayList<Character> guessedChar = new ArrayList<Character>();
+	private ArrayList<Character> guessChar = new ArrayList<Character>();
 	private String temp;
 	private int score = 0;
 
 	/*
-	 * Init method
+	 * Constructor method
 	 */
-	public Game (Player player) {
+	protected Game (Player player) {
 		this.player = player;
 	}
 	
 	/*
 	 * Setup the word valeus to the new word
 	 */
-	public void wordSetup() {
-		
+	private void wordSetup() {
 		this.guessedChar.clear();
 		this.guessChar.clear();
 		
@@ -45,26 +44,23 @@ public class Game {
 		for (char c : this.word.getText().toCharArray()) {
 			  this.guessChar.add(c);
 			}
-		
 	}
 
 	/*
 	 * startGame
 	 * Set basic value for the player to start guessing the word
 	 */
-	public void startGame() {
-		
+	private void startGame() {
 		this.player.setLife(4);
 		this.player.setScore(0);
 		this.wordSetup();
-		
 	}
 	
 	/*
 	 * updateFrame
 	 * Updates the screen to a new word
 	 */
-	public void updateFrame(Word word) {
+	private void updateFrame(Word word) {
 		
 		this.setWord(word);
 		
@@ -111,29 +107,12 @@ public class Game {
 		
 		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
 	}
-
-	public Word getWord() {
-		return word;
-	}
-
-	public void setWord(Word word) {
-		this.word = word;
-	}
-	
-	/*
-	 * setFrame
-	 * pass frame as parameter to Game and define the guessed word lenght to show on the screen
-	 */
-	public void setFrame(Frame frame) {
-		this.frame = frame;
-	}
 	
 	/*
 	 * attGuessWord
 	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
 	 */
-	public void attGuessWord(int i) {
-		
+	private void attGuessWord(int i) {
 		if(i == -1) {
 			return;
 		}
@@ -155,14 +134,10 @@ public class Game {
 		this.frame.tipShow(this.word.getTip());
 	}
 	
-	public int getScore() {
-		return score;
-	}
-	
 	/*
 	 * Takes an ArrayList<Character> and coverts in a normal string
 	 */
-	String getStringRepresentation(ArrayList<Character> list)
+	private String getStringRepresentation(ArrayList<Character> list)
 	{    
 	    StringBuilder builder = new StringBuilder(list.size());
 	    for(Character ch: list)
@@ -239,6 +214,18 @@ public class Game {
 			this.updateFrame(Controller.data.randomChoice(Controller.data.art));
 			return;
 		}
+	}
+
+	public void setWord(Word word) {
+		this.word = word;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+	
+	protected void setFrame(Frame frame) {
+		this.frame = frame;
 	}
 	
 }

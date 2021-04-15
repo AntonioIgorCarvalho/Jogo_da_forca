@@ -4,14 +4,13 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-import buttons.Button;
+import buttons.LetterButton;
 import buttons.Button2;
 import main.Controller;
 import program_interface.Frame;
 
 public class GamePanel extends JPanel {
-	
-	Frame frame;
+	private Frame frame;
 	
 	/*
 	 * Configuring the game JPanel
@@ -59,7 +58,7 @@ public class GamePanel extends JPanel {
 		int aux = 1;
 		for(int i = 65; i < 91; i++) {
 
-			Button button = new Button((char) i, (25 + spaceX ) * aux, spaceY);
+			LetterButton button = new LetterButton((char) i, (25 + spaceX ) * aux, spaceY);
 			aux++;
 			if(aux == 14) {
 				spaceY += 25 + 50;

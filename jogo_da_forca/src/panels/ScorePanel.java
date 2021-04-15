@@ -5,12 +5,12 @@ import java.awt.Color;
 import javax.swing.JPanel;
 
 import buttons.Button2;
+import labels.Label;
 import main.Controller;
 import program_interface.Frame;
-import program_interface.Label;
 
 public class ScorePanel extends JPanel{
-	Frame frame;
+	private Frame frame;
 	
 	/*
 	 * Configuring the Score JPanel

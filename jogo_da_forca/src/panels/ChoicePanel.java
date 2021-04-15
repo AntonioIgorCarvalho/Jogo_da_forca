@@ -9,7 +9,7 @@ import buttons.Button2;
 import main.Controller;
 
 public class ChoicePanel extends JPanel{
-	Frame frame;
+	private Frame frame;
 	
 	/*
 	 * Configuring the choice JPanel

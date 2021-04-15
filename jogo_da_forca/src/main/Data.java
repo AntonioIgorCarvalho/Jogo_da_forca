@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class Data {
 
-	public ArrayList<Word> music = new ArrayList<Word>();
-	public ArrayList<Word> countries = new ArrayList<Word>();
-	public ArrayList<Word> animals = new ArrayList<Word>();
-	public ArrayList<Word> foods = new ArrayList<Word>();
-	public ArrayList<Word> objects = new ArrayList<Word>();
-	public ArrayList<Word> sports = new ArrayList<Word>();
-	public ArrayList<Word> art = new ArrayList<Word>();
+	protected ArrayList<Word> music = new ArrayList<Word>();
+	protected ArrayList<Word> countries = new ArrayList<Word>();
+	protected ArrayList<Word> animals = new ArrayList<Word>();
+	protected ArrayList<Word> foods = new ArrayList<Word>();
+	protected ArrayList<Word> objects = new ArrayList<Word>();
+	protected ArrayList<Word> sports = new ArrayList<Word>();
+	protected ArrayList<Word> art = new ArrayList<Word>();
 	
-	public int currentIndex;
-	public Word currentWord;
+	private int currentIndex;
+	private Word currentWord;
 	
 	public Data() {
 		
@@ -47,7 +47,7 @@ public class Data {
 	/*
 	 * Get a random item on the list
 	 */
-	public Word randomChoice(ArrayList<Word> target) {
+	protected Word randomChoice(ArrayList<Word> target) {
 		int aux = (int) (Math.random() * target.size());
 		this.currentIndex = aux;
 		this.currentWord = target.get(aux);
@@ -58,7 +58,7 @@ public class Data {
 	 * deleteWhenWin
 	 * Deletes the word that the player guessed
 	 */
-	public void deleteWhenWin() {
+	protected void deleteWhenWin() {
 		if(this.currentWord.getType() == "music") {
 			this.music.remove(this.currentIndex);
 			return;
