@@ -1,7 +1,12 @@
 package main;
 
 import java.util.ArrayList;
-
+/*
+ * The Data class has all the words for the game to work
+ * The ArrayLists is where these words are stored
+ * currentIndex -> Used to know which word index the player is current playing
+ * currentWord -> Used to know which type of word the player is current playing
+ */
 public class Data {
 
 	protected ArrayList<Word> music = new ArrayList<Word>();
@@ -56,7 +61,7 @@ public class Data {
 	
 	/*
 	 * deleteWhenWin
-	 * Deletes the word that the player guessed
+	 * Deletes the word that the player guessed (To avoid a person to guess the same word two times)
 	 */
 	protected void deleteWhenWin() {
 		if(this.currentWord.getType() == "music") {
@@ -90,7 +95,8 @@ public class Data {
 	}
 	
 	/*
-	 * User insert the info and create a new word
+	 * newWord
+	 * Receive the info and create a new word
 	 */
 	public void newWord(String text, String tip, String type) {
 		if(type == "music") {

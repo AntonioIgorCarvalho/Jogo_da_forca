@@ -128,6 +128,7 @@ public class Game {
 	}
 	
 	/*
+	 * showTip
 	 * Method to show the current tip on the click of the tip button
 	 */
 	public void showTip() {
@@ -135,6 +136,7 @@ public class Game {
 	}
 	
 	/*
+	 * getStringRepresentation
 	 * Takes an ArrayList<Character> and coverts in a normal string
 	 */
 	private String getStringRepresentation(ArrayList<Character> list)
@@ -148,7 +150,8 @@ public class Game {
 	}
 	
 	/*
-	 * Check if the current session is out of words
+	 * checkCurrentArray
+	 * Check if the current session is out of words, Ex: if "Music" or "Art" has words that the user has not solved yet
 	 */
 	public void checkCurrentArray(String type) {
 		if(type == "music") {
@@ -216,6 +219,8 @@ public class Game {
 		}
 	}
 
+	
+	// Getters and setters
 	public void setWord(Word word) {
 		this.word = word;
 	}

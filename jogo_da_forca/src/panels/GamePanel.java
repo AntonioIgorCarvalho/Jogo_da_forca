@@ -13,7 +13,7 @@ public class GamePanel extends JPanel {
 	private Frame frame;
 	
 	/*
-	 * Configuring the game JPanel
+	 * Constructor
 	 */
 	public GamePanel(Frame frame) {
 			this.frame = frame;
@@ -26,6 +26,7 @@ public class GamePanel extends JPanel {
 	}
 	
 	/*
+	 * updateGamePanel
 	 * Draw the buttons and the enviroment to the guess word
 	 */
 	public void updateGamePanel() {
@@ -49,6 +50,7 @@ public class GamePanel extends JPanel {
 	}
 	
 	/*
+	 * drawButtons
 	 * Creating button letters from A to Z and adding them on the frame
 	 */
 	protected void drawButtons() {

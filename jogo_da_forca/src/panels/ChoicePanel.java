@@ -12,7 +12,7 @@ public class ChoicePanel extends JPanel{
 	private Frame frame;
 	
 	/*
-	 * Configuring the choice JPanel
+	 * Constructor
 	 */
 	public ChoicePanel(Frame frame) {
 		this.frame = frame;
@@ -26,6 +26,7 @@ public class ChoicePanel extends JPanel{
 	}
 	
 	/*
+	 * updateChoicePanel
 	 * Draw the buttons and the enviroment to the choice JPanel
 	 */
 	public void updateChoicePanel() {

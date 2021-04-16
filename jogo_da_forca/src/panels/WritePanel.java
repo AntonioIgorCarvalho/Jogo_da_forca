@@ -16,9 +16,7 @@ public class WritePanel extends JPanel {
 	private String tip;
 	private String type;
 	
-	/*
-	 * Configuring WritePanel
-	 */
+	//Constructor
 	public WritePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -28,7 +26,8 @@ public class WritePanel extends JPanel {
 	}
 	
 	/*
-	 * Interface of the WritePanel
+	 * updateWritePanel
+	 * Configure the interface of the WritePanel
 	 */
 	public void updateWritePanel(String type) {
 		this.removeAll();

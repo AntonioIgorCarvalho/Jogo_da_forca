@@ -10,6 +10,7 @@ import program_interface.Frame;
 public class MenuPanel extends JPanel{
 	Frame frame;
 
+	//Constructor
 	public MenuPanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -20,7 +21,10 @@ public class MenuPanel extends JPanel{
 		
 		this.updateMenuPanel();
 	}
-	
+	/*
+	 * updateMenuPanel
+	 * Draw the buttons to the MenuPanel
+	 */
 	public void updateMenuPanel() {
 		
 		Button2 start = new Button2("Jogar", 500, 100, 200, 200);

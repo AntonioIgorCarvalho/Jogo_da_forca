@@ -25,7 +25,7 @@ public class Frame extends JFrame{
 	private WritePanel write = new WritePanel(this);
 	private NewWordPanel newWord = new NewWordPanel(this);
 
-	// Init
+	// Constructor
 	public Frame(String title){
 		
 		this.setTitle(title); // Title
@@ -74,40 +74,55 @@ public class Frame extends JFrame{
 	}
 
 	/*
-	 * setter of the wordshow
+	 * setWordShow
+	 * setter of the wordShow
 	 */
 	public void setWordShow(String text) {
 		this.wordShow.setText(text);
 		this.wordShow.setVisible(true);
 	}
 	
+	/*
+	 * setLifeShow
+	 * setter of the lifeShow
+	 */
 	public void setLifeShow(int life) {
 		this.lifeShow.setText("Vidas restantes: " + life);
 		this.lifeShow.setVisible(true);
 	}
 	
-	/*
+	/* tipShow
 	 * Show the current tip for the player
 	 */
 	public void tipShow(String tip) {
 		JOptionPane.showMessageDialog(this, tip);
 	}
 	
+	/* completeShow
+	 * Show a message when the player is trying to acess an session without words
+	 */
 	public void completeShow() {
 		JOptionPane.showMessageDialog(this, "Voce ja completou todas as palavras dessa sessao, escolha outra ou adicione mais palavras");
 	}
 	
+	/* winShow
+	 * Show a message when the player is guess a word correctly
+	 */
 	public void winShow() {
 		this.setVisible("menu");
 		JOptionPane.showMessageDialog(this, "Parabens, voce acertou a palavra! Sua pontuacao recebeu +1!");
 	}
 	
+	/* loseShow
+	 * Show a message when the player fail to guess a word
+	 */
 	public void loseShow() {
 		this.setVisible("menu");
 		JOptionPane.showMessageDialog(this, "Voce perdeu :(");
 	}
 	
 	
+	// Getters
 	public GamePanel getGame() {
 		return this.game;
 	}

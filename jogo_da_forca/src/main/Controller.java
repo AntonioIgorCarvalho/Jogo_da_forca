@@ -2,7 +2,7 @@ package main;
 import program_interface.Frame;
 
 /*
- * The Controller class was created to manage the choice of the words to guess
+ * The Controller class was created to make easier to acess the program functions
  */
 public class Controller {
 	

@@ -8,7 +8,7 @@ public class Player {
 	private int life;
 	private int score;
 	
-	// Init
+	// Constructor
 	public Player () {
 		
 	}

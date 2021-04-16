@@ -7,7 +7,7 @@ import javax.swing.JLabel;
 public class Label extends JLabel{
 	
 	/*
-	 * Init method without the font size
+	 * Constructor method without the font size
 	 */
 	public Label(int x, int y, int width, int height) {
 		
@@ -18,7 +18,7 @@ public class Label extends JLabel{
 	}
 	
 	/*
-	 * Init method with the font size
+	 * Constructor method with the font size
 	 */
 	public Label(int x, int y, int width, int height, int font) {
 		

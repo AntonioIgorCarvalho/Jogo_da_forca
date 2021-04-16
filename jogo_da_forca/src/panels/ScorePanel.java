@@ -12,9 +12,7 @@ import program_interface.Frame;
 public class ScorePanel extends JPanel{
 	private Frame frame;
 	
-	/*
-	 * Configuring the Score JPanel
-	 */
+	//Contructor
 	public ScorePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -25,7 +23,8 @@ public class ScorePanel extends JPanel{
 	}
 	
 	/*
-	 * Draw the buttons and the enviroment to the Score JPanel
+	 * updateScorePanel
+	 * Draw and configure the buttons and the enviroment to the Score JPanel
 	 */
 	public void updateScorePanel() {
 		this.removeAll();

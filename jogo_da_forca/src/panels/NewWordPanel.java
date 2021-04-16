@@ -11,9 +11,7 @@ import program_interface.Frame;
 public class NewWordPanel extends JPanel{
 	private Frame frame;
 	
-	/*
-	 * Configuring the NewWord JPanel
-	 */
+	//Constructor
 	public NewWordPanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -22,6 +20,10 @@ public class NewWordPanel extends JPanel{
 		this.setLayout(null);
 	}
 	
+	/*
+	 * updateNewWordPanel
+	 * Draw and configure the buttons for the NewWordPanel
+	 */
 	public void updateNewWordPanel() {
 		
 		Label instruction = new Label(40, 0, 1200, 100, 40);
