@@ -9,11 +9,17 @@ import buttons.Button2;
 import main.Controller;
 import program_interface.Frame;
 
+/**
+ * JPanel when the user is guessing a word
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class GamePanel extends JPanel {
 	private Frame frame;
 	
-	/*
+	/**
 	 * Constructor
+	 * @param frame
 	 */
 	public GamePanel(Frame frame) {
 			this.frame = frame;
@@ -24,10 +30,9 @@ public class GamePanel extends JPanel {
 			this.setLayout(null);
 		
 	}
-	
-	/*
-	 * updateGamePanel
-	 * Draw the buttons and the enviroment to the guess word
+
+	/**
+	 * Draw the buttons and the enviroment for the guess word game
 	 */
 	public void updateGamePanel() {
 		this.removeAll();
@@ -49,9 +54,8 @@ public class GamePanel extends JPanel {
 		this.frame.add(this);//Adding the gameJPanel to the frame
 	}
 	
-	/*
-	 * drawButtons
-	 * Creating button letters from A to Z and adding them on the frame
+	/**
+	 * Creating button letters from A to Z and adding them on the panel
 	 */
 	protected void drawButtons() {
 		int spaceX = 50;

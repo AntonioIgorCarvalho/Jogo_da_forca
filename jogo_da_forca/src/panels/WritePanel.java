@@ -10,13 +10,21 @@ import labels.Label;
 import main.Controller;
 import program_interface.Frame;
 
+/**
+ * JPanel when the player is writing a new word
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class WritePanel extends JPanel {
 	private Frame frame;
 	private String text;
 	private String tip;
 	private String type;
 	
-	//Constructor
+	/**
+	 * Constructor
+	 * @param frame
+	 */
 	public WritePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -25,9 +33,9 @@ public class WritePanel extends JPanel {
 		this.setLayout(null);
 	}
 	
-	/*
-	 * updateWritePanel
+	/**
 	 * Configure the interface of the WritePanel
+	 * @param type
 	 */
 	public void updateWritePanel(String type) {
 		this.removeAll();
@@ -81,12 +89,22 @@ public class WritePanel extends JPanel {
 		this.frame.add(this);
 	}
 	
+	/**
+	 * type setter
+	 * @param type
+	 */
 	public void setType(String type) {
 		this.type = type;
 	}
 	
-	/*
-	 * Take the users input and checks if the text is an acceptable input
+	/**
+	 * Take the users input and checks if the Strings are acceptable
+	 * If one of these steps are true the word is rejected:
+	 * (1) If the lenght is 0
+	 * (2) If the lenght is more then 16
+	 * (3) If the letters are not UpperCase or '_'
+	 * @param text
+	 * @param tip
 	 */
 	private void setTwo(String text, String tip){
 		this.text = text;
@@ -99,10 +117,9 @@ public class WritePanel extends JPanel {
 			JOptionPane.showMessageDialog(this.frame, "Dados invalidos, a nova palavra não foi cadastrada");
 			return;
 		}
+
 		
-		/*
-		 * Checks if the letters are all UpperCase or '_'
-		 */
+		//Checks if the letters are all UpperCase or '_'
 		for(int i = 0; i < text.length(); i++) {
 			
 			if(check == 0) {

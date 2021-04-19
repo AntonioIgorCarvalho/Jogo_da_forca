@@ -7,10 +7,18 @@ import javax.swing.JPanel;
 import buttons.Button2;
 import program_interface.Frame;
 
+/**
+ * Menu JPanel
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class MenuPanel extends JPanel{
 	Frame frame;
 
-	//Constructor
+	/**
+	 * Constructor
+	 * @param frame
+	 */
 	public MenuPanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -21,8 +29,8 @@ public class MenuPanel extends JPanel{
 		
 		this.updateMenuPanel();
 	}
-	/*
-	 * updateMenuPanel
+
+	/**
 	 * Draw the buttons to the MenuPanel
 	 */
 	public void updateMenuPanel() {

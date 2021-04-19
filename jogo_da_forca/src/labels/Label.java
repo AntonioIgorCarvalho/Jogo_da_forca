@@ -4,10 +4,19 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 
+/**
+ * Class to create a generic Label
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class Label extends JLabel{
 	
-	/*
-	 * Constructor method without the font size
+	/**
+	 * Create a label with a fixed font size
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
 	 */
 	public Label(int x, int y, int width, int height) {
 		
@@ -17,8 +26,13 @@ public class Label extends JLabel{
 		
 	}
 	
-	/*
-	 * Constructor method with the font size
+	/**
+	 * Create a label with a custom font size
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param height
+	 * @param font
 	 */
 	public Label(int x, int y, int width, int height, int font) {
 		

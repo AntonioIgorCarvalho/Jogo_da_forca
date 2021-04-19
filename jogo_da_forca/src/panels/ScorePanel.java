@@ -9,10 +9,18 @@ import labels.Label;
 import main.Controller;
 import program_interface.Frame;
 
+/**
+ * JPanel for the current session score (how many words the user guessed)
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class ScorePanel extends JPanel{
 	private Frame frame;
 	
-	//Contructor
+	/**
+	 * Constructor
+	 * @param frame
+	 */
 	public ScorePanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -22,8 +30,7 @@ public class ScorePanel extends JPanel{
 		
 	}
 	
-	/*
-	 * updateScorePanel
+	/**
 	 * Draw and configure the buttons and the enviroment to the Score JPanel
 	 */
 	public void updateScorePanel() {

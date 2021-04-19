@@ -1,14 +1,16 @@
 package main;
 
 import java.util.ArrayList;
-/*
+/**
  * The Data class has all the words for the game to work
  * The ArrayLists is where these words are stored
  * currentIndex -> Used to know which word index the player is current playing
- * currentWord -> Used to know which type of word the player is current playing
+ * currentWord -> Used to know which type of word the player is current playing 
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
  */
 public class Data {
-
+	
 	protected ArrayList<Word> music = new ArrayList<Word>();
 	protected ArrayList<Word> countries = new ArrayList<Word>();
 	protected ArrayList<Word> animals = new ArrayList<Word>();
@@ -20,6 +22,9 @@ public class Data {
 	private int currentIndex;
 	private Word currentWord;
 	
+	/**
+	 * Data to make the program testable
+	 */
 	public Data() {
 		
 		Word ozzy_osbourne = new Word("OZZY_OSBOURNE","Ja mordeu um morcego","music");
@@ -49,8 +54,10 @@ public class Data {
 		
 	}
 	
-	/*
+	/**
 	 * Get a random item on the list
+	 * @param target
+	 * @return a random word on the target ArrayList
 	 */
 	protected Word randomChoice(ArrayList<Word> target) {
 		int aux = (int) (Math.random() * target.size());
@@ -59,8 +66,7 @@ public class Data {
 		return target.get(aux);
 	}
 	
-	/*
-	 * deleteWhenWin
+	/**
 	 * Deletes the word that the player guessed (To avoid a person to guess the same word two times)
 	 */
 	protected void deleteWhenWin() {
@@ -94,9 +100,11 @@ public class Data {
 		}
 	}
 	
-	/*
-	 * newWord
+	/**
 	 * Receive the info and create a new word
+	 * @param text
+	 * @param tip
+	 * @param type
 	 */
 	public void newWord(String text, String tip, String type) {
 		if(type == "music") {

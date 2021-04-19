@@ -8,10 +8,18 @@ import buttons.Button2;
 import labels.Label;
 import program_interface.Frame;
 
+/**
+ * JPanel when the player is choosing which theme to add a new word
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class NewWordPanel extends JPanel{
 	private Frame frame;
 	
-	//Constructor
+	/**
+	 * Constructor
+	 * @param frame
+	 */
 	public NewWordPanel(Frame frame) {
 		this.frame = frame;
 		Color transparent = new Color(0, 0, 0, 0);
@@ -20,8 +28,7 @@ public class NewWordPanel extends JPanel{
 		this.setLayout(null);
 	}
 	
-	/*
-	 * updateNewWordPanel
+	/**
 	 * Draw and configure the buttons for the NewWordPanel
 	 */
 	public void updateNewWordPanel() {

@@ -5,9 +5,8 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 import program_interface.Frame;
-
-public class Game {
-	/*
+	/**
+	 * Game class is used to manage the information between the program data and the interface
 	 * player -> controll the number of errors and tell if the game is over or not
 	 * word -> the current secret word that the player is guessing
 	 * frame -> the graphic interface
@@ -15,7 +14,12 @@ public class Game {
 	 * guessChar -> the string that the player is writting
 	 * temp -> temporary auxiliar string
 	 * score -> the current score of the player
+	 * @author Antonio Igor Carvalho
+	 * @version 1.0 (April 2021)
 	 */
+
+public class Game {
+	
 	private Player player;
 	private Word word;
 	private Frame frame;
@@ -24,15 +28,16 @@ public class Game {
 	private String temp;
 	private int score = 0;
 
-	/*
-	 * Constructor method
+	/**
+	 * Constructor
+	 * @param player
 	 */
 	protected Game (Player player) {
 		this.player = player;
 	}
 	
-	/*
-	 * Setup the word valeus to the new word
+	/**
+	 * Setup the current guessedChar and guessChar values to the word
 	 */
 	private void wordSetup() {
 		this.guessedChar.clear();
@@ -46,8 +51,7 @@ public class Game {
 			}
 	}
 
-	/*
-	 * startGame
+	/**
 	 * Set basic value for the player to start guessing the word
 	 */
 	private void startGame() {
@@ -56,9 +60,9 @@ public class Game {
 		this.wordSetup();
 	}
 	
-	/*
-	 * updateFrame
+	/**
 	 * Updates the screen to a new word
+	 * @param word the new word
 	 */
 	private void updateFrame(Word word) {
 		
@@ -80,9 +84,9 @@ public class Game {
 		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
 	}
 
-	/*
-	 * letterChoice
+	/**
 	 * Check if the selected letter is or not on the current guess word and if the game is over or not
+	 * @param letter
 	 */
 	public void letterChoice(char letter) {
 		if(this.word.letterCheck(letter) == true) {//If letter that the player chose is correct
@@ -102,15 +106,16 @@ public class Game {
 		if(this.player.getScore() >= this.word.getLenght()) {
 			score = score += 1;
 			this.frame.winShow();
-			Controller.data.deleteWhenWin();
+			Controller.data.deleteWhenWin();// If the player win the current word is deleted
 		}
 		
 		SwingUtilities.updateComponentTreeUI(this.frame);//Updating the frame
 	}
-	
-	/*
-	 * attGuessWord
+
+	/**
 	 * Takes the i index of guessChar/guessedChar and att the JLabel to show the new guessed letter and add the player score
+	 * The score is the Player.score, refer to see if the player has already guessed the word
+	 * @param i
 	 */
 	private void attGuessWord(int i) {
 		if(i == -1) {
@@ -127,17 +132,17 @@ public class Game {
 		this.frame.setWordShow(temp);
 	}
 	
-	/*
-	 * showTip
-	 * Method to show the current tip on the click of the tip button
+	/**
+	 * Show the current tip on the click of the tip button
 	 */
 	public void showTip() {
 		this.frame.tipShow(this.word.getTip());
 	}
 	
-	/*
-	 * getStringRepresentation
+	/**
 	 * Takes an ArrayList<Character> and coverts in a normal string
+	 * @param list
+	 * @return normalString
 	 */
 	private String getStringRepresentation(ArrayList<Character> list)
 	{    
@@ -149,9 +154,10 @@ public class Game {
 	    return builder.toString();
 	}
 	
-	/*
-	 * checkCurrentArray
-	 * Check if the current session is out of words, Ex: if "Music" or "Art" has words that the user has not solved yet
+	/**
+	 * Check if the current session is out of words,
+	 * Ex: if "Music" or "Art" has words that the user has not solved yet
+	 * @param type
 	 */
 	public void checkCurrentArray(String type) {
 		if(type == "music") {
@@ -220,15 +226,26 @@ public class Game {
 	}
 
 	
-	// Getters and setters
+	/**
+	 * word setter
+	 * @param word
+	 */
 	public void setWord(Word word) {
 		this.word = word;
 	}
 	
+	/**
+	 * score getter
+	 * @return
+	 */
 	public int getScore() {
 		return score;
 	}
 	
+	/**
+	 * frame setter
+	 * @param frame
+	 */
 	protected void setFrame(Frame frame) {
 		this.frame = frame;
 	}

@@ -1,6 +1,11 @@
 package main;
 import program_interface.Frame;
 
+/**
+ * Main class, just to initialize the program
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class Main {
 	
 	public static void main(String args[]) {

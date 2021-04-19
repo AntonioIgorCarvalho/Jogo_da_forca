@@ -2,10 +2,18 @@ package buttons;
 import main.Controller;
 import javax.swing.JButton;
 
+/**
+ * Class created to the letter buttons from A to Z
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class LetterButton extends JButton {
 
-	/*
-	 * Class created to the letter buttons from A to Z
+	/**
+	 * Takes the params and create a button with the position on the frame but the size is fixed
+	 * @param title
+	 * @param x
+	 * @param y
 	 */
 	public LetterButton(Character title, int x, int y){
 	

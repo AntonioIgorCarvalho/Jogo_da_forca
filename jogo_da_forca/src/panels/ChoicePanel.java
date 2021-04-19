@@ -8,11 +8,17 @@ import javax.swing.JPanel;
 import buttons.Button2;
 import main.Controller;
 
+/**
+ * JPanel for the choice of theme before playing the game
+ * @author Antonio Igor Carvalho
+ * @version 1.0 (April 2021)
+ */
 public class ChoicePanel extends JPanel{
 	private Frame frame;
 	
-	/*
+	/**
 	 * Constructor
+	 * @param frame
 	 */
 	public ChoicePanel(Frame frame) {
 		this.frame = frame;
@@ -25,9 +31,8 @@ public class ChoicePanel extends JPanel{
 		this.updateChoicePanel();
 	}
 	
-	/*
-	 * updateChoicePanel
-	 * Draw the buttons and the enviroment to the choice JPanel
+	/**
+	 * Draw the buttons and the enviroment to the choice JPanel 
 	 */
 	public void updateChoicePanel() {
 		Button2 music = new Button2("Musica", 40, 100, 200, 200);
