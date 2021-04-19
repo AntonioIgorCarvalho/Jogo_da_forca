@@ -23,8 +23,8 @@ public class Data {
 	public Data() {
 		
 		Word ozzy_osbourne = new Word("OZZY_OSBOURNE","Ja mordeu um morcego","music");
-		Word kurt_cobain = new Word("KURT_COBAIN","Uma das capas de seus albums é a foto de seu filho submerso","music");
-		Word megadeth = new Word("MEGADETH","O fundador da banda foi expulso de outra ants de fundar sua propria","music");
+		Word kurt_cobain = new Word("KURT_COBAIN","Uma das capas de seus albums e a foto de seu filho submerso","music");
+		Word megadeth = new Word("MEGADETH","O fundador da banda foi expulso de outra antes de fundar sua propria","music");
 		this.music.add(ozzy_osbourne);
 		this.music.add(kurt_cobain);
 		this.music.add(megadeth);
@@ -32,13 +32,13 @@ public class Data {
 		Word brasil = new Word("BRASIL","De todos os países, é o único que disputou todas as copas do mundo","countries");
 		this.countries.add(brasil);
 		
-		Word cachorro = new Word("CACHORRO","É um dos melhores amigos do ser humano","animals");
+		Word cachorro = new Word("CACHORRO","E um dos melhores amigos do ser humano","animals");
 		this.animals.add(cachorro);
 		
-		Word batata = new Word("BATATA","É uma grande fonte de carboidratos","foods");
+		Word batata = new Word("BATATA","E uma grande fonte de carboidratos","foods");
 		this.foods.add(batata);
 		
-		Word abajur = new Word("ABAJUR","É um bom utensilio para ler","objects");
+		Word abajur = new Word("ABAJUR","E um bom utensilio para ler","objects");
 		this.objects.add(abajur);
 		
 		Word golf = new Word("GOLF","Tiger Woods aprova","sports");
