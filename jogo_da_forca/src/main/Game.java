@@ -7,19 +7,21 @@ import javax.swing.SwingUtilities;
 import program_interface.Frame;
 	/**
 	 * Game class is used to manage the information between the program data and the interface
-	 * player -> controll the number of errors and tell if the game is over or not
-	 * word -> the current secret word that the player is guessing
-	 * frame -> the graphic interface
-	 * guessedChar ->  the string of the current secret word
-	 * guessChar -> the string that the player is writting
-	 * temp -> temporary auxiliar string
-	 * score -> the current score of the player
 	 * @author Antonio Igor Carvalho
 	 * @version 1.0 (April 2021)
 	 */
 
 public class Game {
 	
+	/*
+	 * player  controll the number of errors and tell if the game is over or not
+	 * word is the current secret word that the player is guessing
+	 * frame is the graphic interface
+	 * guessedChar is  the string of the current secret word
+	 * guessChar is the string that the player is writting
+	 * temp is the temporary auxiliar string
+	 * score is the current score of the player
+	 */
 	private Player player;
 	private Word word;
 	private Frame frame;
@@ -30,7 +32,7 @@ public class Game {
 
 	/**
 	 * Constructor
-	 * @param player
+	 * @param player the current object
 	 */
 	protected Game (Player player) {
 		this.player = player;
@@ -86,7 +88,7 @@ public class Game {
 
 	/**
 	 * Check if the selected letter is or not on the current guess word and if the game is over or not
-	 * @param letter
+	 * @param letter the letter the player has clicked
 	 */
 	public void letterChoice(char letter) {
 		if(this.word.letterCheck(letter) == true) {//If letter that the player chose is correct
@@ -140,8 +142,8 @@ public class Game {
 	}
 	
 	/**
-	 * Takes an ArrayList<Character> and coverts in a normal string
-	 * @param list
+	 * Takes an ArrayList of Characters and coverts in a normal string
+	 * @param list the current ArrayList
 	 * @return normalString
 	 */
 	private String getStringRepresentation(ArrayList<Character> list)
@@ -236,7 +238,7 @@ public class Game {
 	
 	/**
 	 * score getter
-	 * @return
+	 * @return score
 	 */
 	public int getScore() {
 		return score;

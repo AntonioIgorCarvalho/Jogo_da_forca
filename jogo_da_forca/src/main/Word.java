@@ -2,14 +2,15 @@ package main;
 
 /**
  * Class responsable for the words in the game
- * text -> content of the word
- * type -> type of the word
- * lenght -> lenght of the word
  * @author Antonio Igor Carvalho
  * @version 1.0 (April 2021)
  */
 public class Word {
-	
+	/*
+	 * text is the content of the word
+	 * type is the type of the word
+	 * lenght is the lenght of the word
+	 */
 	private String text;
 	private String tip;
 	private String type;

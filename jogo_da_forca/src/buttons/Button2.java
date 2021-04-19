@@ -13,11 +13,11 @@ public class Button2 extends JButton{
 	
 	/**
 	 * Receive the params to create a button with title, position on the screen and size
-	 * @param title
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
+	 * @param title the title of the button
+	 * @param x horizontal position
+	 * @param y	vertical position
+	 * @param width button width
+	 * @param height button height
 	 */
 	public Button2(String title, int x, int y, int width, int height) {
 	this.setBounds(x, y, width, height);

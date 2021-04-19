@@ -3,14 +3,16 @@ package main;
 import java.util.ArrayList;
 /**
  * The Data class has all the words for the game to work
- * The ArrayLists is where these words are stored
- * currentIndex -> Used to know which word index the player is current playing
- * currentWord -> Used to know which type of word the player is current playing 
  * @author Antonio Igor Carvalho
  * @version 1.0 (April 2021)
  */
 public class Data {
 	
+	/*
+	 * The ArrayLists is where these words are stored
+	 * currentIndex is Used to know which word index the player is current playing
+	 * currentWord is Used to know which type of word the player is current playing 
+	 */
 	protected ArrayList<Word> music = new ArrayList<Word>();
 	protected ArrayList<Word> countries = new ArrayList<Word>();
 	protected ArrayList<Word> animals = new ArrayList<Word>();
@@ -56,7 +58,7 @@ public class Data {
 	
 	/**
 	 * Get a random item on the list
-	 * @param target
+	 * @param target the current ArrayList to get a random word
 	 * @return a random word on the target ArrayList
 	 */
 	protected Word randomChoice(ArrayList<Word> target) {
@@ -102,9 +104,9 @@ public class Data {
 	
 	/**
 	 * Receive the info and create a new word
-	 * @param text
-	 * @param tip
-	 * @param type
+	 * @param text the new word text
+	 * @param tip the new word tip
+	 * @param type the new word type identifier
 	 */
 	public void newWord(String text, String tip, String type) {
 		if(type == "music") {

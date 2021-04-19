@@ -13,10 +13,10 @@ public class Label extends JLabel{
 	
 	/**
 	 * Create a label with a fixed font size
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
+	 * @param x horizontal position
+	 * @param y vertical position
+	 * @param width width of the button
+	 * @param height height of the button
 	 */
 	public Label(int x, int y, int width, int height) {
 		
@@ -28,11 +28,11 @@ public class Label extends JLabel{
 	
 	/**
 	 * Create a label with a custom font size
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param height
-	 * @param font
+	 * @param x horizontal position
+	 * @param y vertical position
+	 * @param width width of the button
+	 * @param height height of the button
+	 * @param font font size of the title
 	 */
 	public Label(int x, int y, int width, int height, int font) {
 		

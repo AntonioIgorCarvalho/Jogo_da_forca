@@ -11,9 +11,9 @@ public class LetterButton extends JButton {
 
 	/**
 	 * Takes the params and create a button with the position on the frame but the size is fixed
-	 * @param title
-	 * @param x
-	 * @param y
+	 * @param title title of the button
+	 * @param x horizontal position of the button
+	 * @param y vertical position of the button
 	 */
 	public LetterButton(Character title, int x, int y){
 	

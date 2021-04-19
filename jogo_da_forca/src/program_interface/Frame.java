@@ -15,13 +15,14 @@ import panels.ScorePanel;
 import panels.WritePanel;
 /**
  * Class created for the frame of the application
- * wordShow -> the current guess word on the screen
- * lifeShow -> the current life on the screen
  * @author Antonio Igor Carvalho
  * @version 1.0 (April 2021)
  */
 public class Frame extends JFrame{
-
+	/*
+	 * wordShow is the current guess word on the screen
+	 * lifeShow is the current life on the screen
+	 */
 	private Label wordShow = new Label(75, 200, 1000, 400);
 	private Label lifeShow = new Label(75, 200, 1000, 200, 48);
 	private GamePanel game = new GamePanel(this);
@@ -33,7 +34,7 @@ public class Frame extends JFrame{
 
 	/**
 	 * Constructor of the frame
-	 * @param title
+	 * @param title the frame title
 	 */
 	public Frame(String title){
 		
@@ -50,7 +51,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * Choose which JPanel to be the one visible based on the choice string
-	 * @param choice
+	 * @param choice the name of the panel to be visible
 	 */
 	public void setVisible(String choice) {
 		this.menu.setVisible(false);
@@ -84,7 +85,7 @@ public class Frame extends JFrame{
 
 	/**
 	 * setter of the wordShow
-	 * @param text
+	 * @param text the current word to be placed on the wordShow
 	 */
 	public void setWordShow(String text) {
 		this.wordShow.setText(text);
@@ -93,7 +94,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * setter of the lifeShow
-	 * @param life
+	 * @param life the player current life on the gamePanel
 	 */
 	public void setLifeShow(int life) {
 		this.lifeShow.setText("Vidas restantes: " + life);
@@ -102,7 +103,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * Show the current tip for the player in a message dialog
-	 * @param tip
+	 * @param tip the game current tip
 	 */
 	public void tipShow(String tip) {
 		JOptionPane.showMessageDialog(this, tip);
@@ -134,7 +135,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * game getter
-	 * @return game
+	 * @return game the gamePanel
 	 */
 	public GamePanel getGame() {
 		return this.game;
@@ -142,7 +143,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * wordShow getter
-	 * @return wordShow
+	 * @return wordShow the current word on the gamePanel
 	 */
 	public Label getWordShow() {
 		return this.wordShow;
@@ -150,7 +151,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * lifeShow getter
-	 * @return lifeShow
+	 * @return lifeShow current life of the player
 	 */
 	public Label getLifeShow() {
 		return this.lifeShow;
@@ -158,7 +159,7 @@ public class Frame extends JFrame{
 	
 	/**
 	 * write getter
-	 * @return write
+	 * @return write the writePanel of the frame
 	 */
 	public WritePanel getWrite() {
 		return this.write;
