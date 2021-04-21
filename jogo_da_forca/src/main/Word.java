@@ -34,7 +34,7 @@ public class Word {
 	 * @param letter
 	 * @return
 	 */
-	protected boolean letterCheck(char letter) {
+	public boolean letterCheck(char letter) {
 		for(int i = 0; i < this.lenght; i++) {
 			if(this.text.charAt(i) == letter) {
 				return true;
@@ -48,7 +48,7 @@ public class Word {
 	 * @param letter
 	 * @return
 	 */
-	protected int letterCheckIndex(char letter){
+	public int letterCheckIndex(char letter){
 		for(int i = 0; i < this.lenght; i++) {
 			if(this.text.charAt(i) == letter) {
 				return i;
