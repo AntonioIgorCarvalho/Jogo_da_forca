@@ -21,8 +21,8 @@ public class Data {
 	protected ArrayList<Word> sports = new ArrayList<Word>();
 	protected ArrayList<Word> art = new ArrayList<Word>();
 	
-	private int currentIndex;
-	private Word currentWord;
+	public int currentIndex;
+	public Word currentWord;
 	
 	/**
 	 * Data to make the program testable
@@ -61,7 +61,7 @@ public class Data {
 	 * @param target the current ArrayList to get a random word
 	 * @return a random word on the target ArrayList
 	 */
-	protected Word randomChoice(ArrayList<Word> target) {
+	public Word randomChoice(ArrayList<Word> target) {
 		int aux = (int) (Math.random() * target.size());
 		this.currentIndex = aux;
 		this.currentWord = target.get(aux);
@@ -137,6 +137,14 @@ public class Data {
 			this.art.add(new Word(text, tip, type));
 			return;
 		}
+	}
+	
+	/**
+	 * Return a music Word to be used on the tests
+	 * @return musicWord the word to be used
+	 */
+	public Word getMusicTest() {
+		return this.music.get(0);
 	}
 	
 }
