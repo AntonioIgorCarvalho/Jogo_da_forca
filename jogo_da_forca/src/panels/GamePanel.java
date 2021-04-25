@@ -19,7 +19,7 @@ public class GamePanel extends JPanel {
 	
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public GamePanel(Frame frame) {
 			this.frame = frame;

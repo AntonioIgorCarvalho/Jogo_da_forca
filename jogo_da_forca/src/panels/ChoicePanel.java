@@ -18,7 +18,7 @@ public class ChoicePanel extends JPanel{
 	
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public ChoicePanel(Frame frame) {
 		this.frame = frame;

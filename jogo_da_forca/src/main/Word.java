@@ -18,9 +18,9 @@ public class Word {
 	
 	/**
 	 * Constructor
-	 * @param text
-	 * @param tip
-	 * @param type
+	 * @param text the Word main name
+	 * @param tip the tip of the word
+	 * @param type the type of the word
 	 */
 	public Word(String text, String tip, String type) {
 		this.setText(text);
@@ -31,8 +31,8 @@ public class Word {
 	
 	/**
 	 * Takes a char and compares to see if this char is in the string
-	 * @param letter
-	 * @return
+	 * @param letter the letter to be checked
+	 * @return true if the letter is there, false if not
 	 */
 	public boolean letterCheck(char letter) {
 		for(int i = 0; i < this.lenght; i++) {
@@ -45,8 +45,8 @@ public class Word {
 	
 	/**
 	 * Takes a letter and return the index, return -1 if its not there
-	 * @param letter
-	 * @return
+	 * @param letter the letter to be checked
+	 * @return the int i index of that letter
 	 */
 	public int letterCheckIndex(char letter){
 		for(int i = 0; i < this.lenght; i++) {
@@ -59,55 +59,55 @@ public class Word {
 	
 	/**
 	 * text getter
-	 * @return text
+	 * @return text the Word class text
 	 */
 	protected String getText() {
 		return text;
 	}
 	/**
 	 * text setter
-	 * @param text
+	 * @param text the new text
 	 */
 	protected void setText(String text) {
 		this.text = text;
 	}
 	/**
 	 * tip getter
-	 * @return tip
+	 * @return tip the Word class tip
 	 */
 	protected String getTip() {
 		return tip;
 	}
 	/**
 	 * tip setter
-	 * @param tip
+	 * @param tip the new tip
 	 */
 	protected void setTip(String tip) {
 		this.tip = tip;
 	}
 	/**
 	 * type getter
-	 * @return type
+	 * @return type the Word class type
 	 */
 	protected String getType() {
 		return type;
 	}
 	/**
 	 * type setter
-	 * @param type
+	 * @param type the new type
 	 */
 	protected void setType(String type) {
 		this.type = type;
 	}
 	/**
 	 * lenght getter
-	 * @return lenght
+	 * @return lenght the Word class lenght variable
 	 */
 	protected int getLenght() {
 		return lenght;
 	}
 	/**
-	 * lenght setter
+	 * lenght setter the new lenght
 	 */
 	protected void setLenght() {
 		this.lenght = this.text.length();

@@ -19,7 +19,7 @@ public class ScorePanel extends JPanel{
 	
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public ScorePanel(Frame frame) {
 		this.frame = frame;

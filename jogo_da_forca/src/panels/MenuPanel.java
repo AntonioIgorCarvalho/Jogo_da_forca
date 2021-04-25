@@ -17,7 +17,7 @@ public class MenuPanel extends JPanel{
 
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public MenuPanel(Frame frame) {
 		this.frame = frame;

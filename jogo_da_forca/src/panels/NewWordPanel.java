@@ -18,7 +18,7 @@ public class NewWordPanel extends JPanel{
 	
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public NewWordPanel(Frame frame) {
 		this.frame = frame;

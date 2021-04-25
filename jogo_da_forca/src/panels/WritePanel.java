@@ -23,7 +23,7 @@ public class WritePanel extends JPanel {
 	
 	/**
 	 * Constructor
-	 * @param frame
+	 * @param frame the main frame of the program
 	 */
 	public WritePanel(Frame frame) {
 		this.frame = frame;
@@ -35,7 +35,7 @@ public class WritePanel extends JPanel {
 	
 	/**
 	 * Configure the interface of the WritePanel
-	 * @param type
+	 * @param type the type of the Word to be created
 	 */
 	public void updateWritePanel(String type) {
 		this.removeAll();
@@ -91,7 +91,7 @@ public class WritePanel extends JPanel {
 	
 	/**
 	 * type setter
-	 * @param type
+	 * @param type the new type
 	 */
 	public void setType(String type) {
 		this.type = type;

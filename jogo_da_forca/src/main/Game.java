@@ -159,7 +159,7 @@ public class Game {
 	/**
 	 * Check if the current session is out of words,
 	 * Ex: if "Music" or "Art" has words that the user has not solved yet
-	 * @param type
+	 * @param type the type of the current game session
 	 */
 	public void checkCurrentArray(String type) {
 		if(type == "music") {
@@ -230,7 +230,7 @@ public class Game {
 	
 	/**
 	 * word setter
-	 * @param word
+	 * @param word the new word
 	 */
 	public void setWord(Word word) {
 		this.word = word;
@@ -238,7 +238,7 @@ public class Game {
 	
 	/**
 	 * score getter
-	 * @return score
+	 * @return score the new score
 	 */
 	public int getScore() {
 		return score;
@@ -246,7 +246,7 @@ public class Game {
 	
 	/**
 	 * frame setter
-	 * @param frame
+	 * @param frame the new frame
 	 */
 	protected void setFrame(Frame frame) {
 		this.frame = frame;
